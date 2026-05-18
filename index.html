@@ -3,405 +3,655 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>泡泡玛特 | 王宁 2026 最新深度访谈</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>资本市场早间快报 2026年5月18日</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&amp;family=Noto+Sans+SC:wght@400;500&amp;display=swap');
         
         :root {
-            --tw-color-accent: #9f1239;
+            --ft-blue: #002f5f;
+            --bg-cream: #f8f4eb;
+            --text-main: #1a1a1a;
+            --accent: #002f5f;
+            --card-bg: #ffffff;
+            --border: #d4d4d4;
         }
         
-        * {
-            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            transition-duration: 150ms;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-main);
+            line-height: 1.6;
         }
         
-        .tailwind-ready .serif {
-            font-family: 'Playfair Display', serif;
+        .ft-header {
+            background-color: var(--ft-blue);
+            color: white;
+            padding: 18px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
         
-        .tailwind-ready .sans {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        .ft-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: Georgia, serif;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -1px;
         }
         
-        .hero-bg {
-            background: linear-gradient(180deg, #111111 0%, #1a1a1a 100%);
+        .ft-logo::before {
+            content: 'FT';
+            background: white;
+            color: var(--ft-blue);
+            padding: 2px 10px;
+            border-radius: 3px;
+            font-size: 24px;
         }
         
-        .card-hover {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        .header-title {
+            font-family: Georgia, serif;
+            font-size: 24px;
+            font-weight: 600;
         }
         
-        .card-hover:hover {
-            transform: translateY(-4px);
-            box-shadow: 25px 25px 0 -10px rgb(159 18 57);
+        .container {
+            max-width: 1480px;
+            margin: 0 auto;
+            padding: 0 40px;
         }
         
-        .quote-block {
-            border-left: 6px solid #9f1239;
+        .directory {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px 40px;
+            margin: 1.75rem 0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .directory h2 {
+            font-family: Georgia, serif;
+            font-size: 18px;
+            color: var(--accent);
+            margin-bottom: 12px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+        
+        .directory-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px 40px;
+            list-style: none;
+        }
+        
+        .directory-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        .directory-links a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+        
+        section {
+            margin-bottom: 1.75rem;
         }
         
         .section-header {
+            font-family: Georgia, serif;
+            font-size: 28px;
+            color: var(--accent);
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--accent);
+            margin-bottom: 24px;
             position: relative;
         }
         
         .section-header::after {
             content: '';
             position: absolute;
-            width: 64px;
-            height: 3px;
-            background-color: #9f1239;
-            bottom: -4px;
+            bottom: -3px;
             left: 0;
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
         }
         
-        .accent-text {
-            color: #9f1239;
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(680px, 1fr));
+            gap: 28px;
+        }
+        
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 28px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-emoji {
+            font-size: 32px;
+            margin-bottom: 12px;
+            display: block;
+        }
+        
+        .card-title {
+            font-family: Georgia, serif;
+            font-size: 22px;
+            margin-bottom: 16px;
+            color: var(--accent);
+            line-height: 1.3;
+        }
+        
+        .card ul {
+            padding-left: 22px;
+        }
+        
+        .card ul li {
+            margin-bottom: 12px;
+            position: relative;
+        }
+        
+        .card ul li strong {
+            color: var(--accent);
+        }
+        
+        .ft-accent {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        .footer {
+            background: #fff;
+            border-top: 1px solid var(--border);
+            padding: 40px;
+            margin-top: 60px;
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 1024px) {
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 0 24px;
+            }
+            .ft-header {
+                padding: 16px 24px;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .directory-links {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .section-header {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
-<body class="tailwind-ready bg-[#f8f1e3] text-neutral-800 sans">
-    <!-- 深色顶部横条导航 -->
-    <nav class="bg-neutral-950 text-white sticky top-0 z-50 border-b border-white/10">
-        <div class="max-w-screen-2xl mx-auto px-8 lg:px-12">
-            <div class="h-16 flex items-center justify-between">
-                <!-- Logo -->
-                <div class="flex items-center gap-x-3">
-                    <div class="w-9 h-9 bg-white rounded-2xl flex items-center justify-center text-neutral-950 text-3xl leading-none pt-px">泡</div>
-                    <div>
-                        <span class="text-2xl font-semibold tracking-[-0.5px]">泡泡玛特</span>
-                    </div>
-                </div>
-
-                <!-- 导航链接 -->
-                <div class="hidden md:flex items-center gap-x-8 text-sm font-medium uppercase tracking-widest">
-                    <a href="#overview" class="hover:text-[#9f1239] flex items-center gap-x-1">
-                        <span>访谈概览</span>
-                    </a>
-                    <a href="#f1" class="hover:text-[#9f1239]">F1赛道体感</a>
-                    <a href="#organization" class="hover:text-[#9f1239]">组织进化</a>
-                    <a href="#global" class="hover:text-[#9f1239]">全球化挑战</a>
-                    <a href="#ip" class="hover:text-[#9f1239]">IP战略与Labubu</a>
-                    <a href="#content" class="hover:text-[#9f1239]">内容化探索</a>
-                    <a href="#future" class="hover:text-[#9f1239]">集团化与未来</a>
-                </div>
-
-                <!-- 访谈信息 -->
-                <div class="flex items-center gap-x-4 text-xs">
-                    <div class="px-4 py-1.5 bg-white/10 rounded-3xl flex items-center gap-x-2">
-                        <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                        <span class="font-medium">2026.05.06</span>
-                    </div>
-                    <div class="flex items-center bg-white/10 rounded-3xl pl-2 pr-5 py-1 gap-x-2 text-white/90">
-                        <span class="font-semibold text-[#9f1239]">李翔</span>
-                        <span class="text-white/60">对话</span>
-                        <span class="font-semibold">王宁</span>
-                    </div>
-                </div>
-            </div>
+<body>
+    <!-- FT 深蓝头部 -->
+    <header class="ft-header">
+        <div class="ft-logo">
+            <span class="header-title">资本市场早间快报 2026年5月18日</span>
         </div>
-    </nav>
-
-    <!-- Hero 区 -->
-    <header class="hero-bg text-white py-16 lg:py-24">
-        <div class="max-w-screen-2xl mx-auto px-8 lg:px-12">
-            <div class="max-w-4xl">
-                <div class="inline-flex items-center px-6 py-2 bg-white/10 text-white text-sm rounded-3xl mb-8 backdrop-blur-md">
-                    <span class="px-3 py-px bg-[#9f1239] rounded-3xl text-xs font-medium mr-3">2026 最新完整访谈</span>
-                    泡泡玛特创始人王宁 × 李翔 深度对谈
-                </div>
-                
-                <h1 class="serif text-6xl lg:text-7xl leading-none font-semibold tracking-[-1px] mb-6">
-                    从F1赛道<br>到组织觉醒
-                </h1>
-                <p class="text-2xl lg:text-3xl text-white/80 font-light max-w-2xl leading-tight mb-10">
-                    2025年200%高速增长的极限测试、<span class="text-[#9f1239]">组织能力</span>的深度反思、Labubu长期主义管理、全球化向集团化的战略跃迁——王宁首次完整复盘15年公司最痛苦也最精彩的一年
-                </p>
-                
-                <div class="flex items-center gap-x-6 text-sm">
-                    <div class="flex -space-x-4">
-                        <div class="w-8 h-8 bg-[#9f1239] rounded-2xl flex items-center justify-center text-xs ring-2 ring-neutral-950">王</div>
-                        <div class="w-8 h-8 bg-white text-neutral-950 rounded-2xl flex items-center justify-center text-xs ring-2 ring-neutral-950">李</div>
-                    </div>
-                    <div>
-                        <p class="font-medium">李翔详谈 · 泡泡玛特15周年关键一年</p>
-                        <p class="text-white/60 text-xs">2024.09.03 上次对谈后，近一年半时间完整记录</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- 装饰横线 -->
-        <div class="mt-16 border-t border-white/10 max-w-screen-2xl mx-auto px-8 lg:px-12">
-            <div class="flex justify-between text-xs uppercase tracking-widest pt-6 text-white/60">
-                <div>2025年：200%增长 · 最痛苦一年</div>
-                <div class="flex items-center gap-x-8">
-                    <div>组织管理70分</div>
-                    <div>Labubu全球爆火却“灭火”</div>
-                    <div>海外标准对齐</div>
-                    <div>电影游戏反思</div>
-                </div>
-                <div>2026.05.06 本次访谈</div>
-            </div>
+        <div style="font-family: Georgia, serif; font-size: 18px; font-weight: 500;">
+            2026年5月18日 · 周一
         </div>
     </header>
 
-    <main class="max-w-screen-2xl mx-auto px-8 lg:px-12 pb-24">
+    <div class="container">
         
-        <!-- 核心摘要 - 大幅扩展 -->
-        <div id="overview" class="mb-20">
-            <div class="flex items-baseline justify-between mb-8">
-                <h2 class="serif text-4xl font-semibold">核心洞见 · 王宁原话精选</h2>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- 卡片1 -->
-                <div class="card-hover bg-white p-8 rounded-3xl shadow-xl">
-                    <div class="text-[#9f1239] text-xs font-medium mb-3 tracking-widest">F1赛道体感</div>
-                    <p class="text-lg leading-tight mb-6">“我们最近老蒋说，我说现在很像是你刚学会开车，然后就把你拉去开F1。对，所以说你平时开车的时候听听音乐看看风景，但是开F1你会发现只有别人认为你很爽啊，但实际上你需要全神贯注，而且相当于是你开F1的时候，你车还是一个超快速度，然后你能够明显感觉到可能这个车有很多问题……压力还是比较大的，精神紧绷。”</p>
-                    <div class="text-neutral-500 text-sm">—— 王宁 00:03-02:55</div>
-                </div>
-                
-                <!-- 卡片2 -->
-                <div class="card-hover bg-white p-8 rounded-3xl shadow-xl">
-                    <div class="text-[#9f1239] text-xs font-medium mb-3 tracking-widest">2025年自评</div>
-                    <div class="flex items-baseline gap-x-8 mb-6">
-                        <div>
-                            <p class="text-5xl font-semibold text-neutral-900">95</p>
-                            <p class="text-neutral-400 text-sm">业务成绩</p>
-                        </div>
-                        <div>
-                            <p class="text-5xl font-semibold text-neutral-900">70</p>
-                            <p class="text-neutral-400 text-sm">组织管理</p>
-                        </div>
-                    </div>
-                    <p class="text-sm leading-tight">去年是近几年最痛苦的一年，睡眠最差，身体状况最不好。2025年200%增长，把15年公司直接拉到F1赛道。</p>
-                </div>
-                
-                <!-- 卡片3 -->
-                <div class="card-hover bg-white p-8 rounded-3xl shadow-xl">
-                    <div class="text-[#9f1239] text-xs font-medium mb-3 tracking-widest">组织觉醒</div>
-                    <p class="text-xl leading-tight">“公司已经超过1万人……它已经变成一个非常复杂的、像毛细血管一样的一个组织。那你组织他，你就会发现他还是会有很多你以前不是说团队的，就是大家坐下来开个会解决的问题。他是一些还是你以前没有遇到过的各种各样的这种管理模式、管理方法，激励机制等等这些问题。”</p>
-                </div>
-            </div>
+        <!-- 目录栏 -->
+        <div class="directory">
+            <h2>目录</h2>
+            <ul class="directory-links">
+                <li><a href="#sec1">政策监管动态</a></li>
+                <li><a href="#sec2">AI算力与Token基础设施</a></li>
+                <li><a href="#sec3">半导体芯片产业</a></li>
+                <li><a href="#sec4">卫星航天与遥感技术</a></li>
+                <li><a href="#sec5">具身智能与机器人技术</a></li>
+                <li><a href="#sec6">上市公司动态与业绩</a></li>
+                <li><a href="#sec7">国际市场联动与投融资</a></li>
+                <li><a href="#sec8">新兴产业趋势与宏观观察</a></li>
+            </ul>
         </div>
+
+        <!-- 资本市场新闻主内容 -->
         
-        <!-- 模块1：F1赛道高速增长 - 详细原文 -->
-        <section id="f1" class="mb-24">
-            <div class="section-header mb-8">
-                <span class="px-4 py-1 text-xs font-medium bg-[#9f1239] text-white rounded-3xl">01</span>
-                <h2 class="serif inline ml-4 text-4xl font-semibold">高速增长的F1赛道体感</h2>
-            </div>
-            <div class="prose max-w-none text-lg leading-relaxed text-neutral-700 space-y-8">
-                <p>王宁回顾2024年9月3日上次对谈后的近一年半时间：“其实那个时候可能我们也没有想过，就是接下来的速度也会比我们预期的要快很多。”</p>
-                
-                <div class="quote-block bg-white p-8 rounded-3xl pl-10">
-                    <p class="italic">“我们最近老蒋说，我说现在很像是你刚学会开车，然后就把你拉去开F1。对，所以说你平时开车的时候听听音乐看看风景，但是开F1你会发现只有别人认为你很爽啊，但实际上你需要全神贯注，而且车还是一个超快速度，然后你能够明显感觉到可能这个车有很多问题其实这个时候你的压力还是比较大的，精神紧绷。这个还不能够犯错，而且一个小错误，有可能就会带来比较大的后果，包括车的零部件，然后你能感觉到也是各种各样的问题。”</p>
-                    <div class="mt-6 text-[#9f1239] text-sm">—— 王宁</div>
-                </div>
-                
-                <p>李翔问是否享受：“你没有那么享受过去这一年多，就是这么大家这么关注，把公司给算。”</p>
-                <p class="bg-[#f8f1e3] p-6 rounded-3xl">王宁回答：“我觉得我们应该绝大多数同事，近几年应该最痛苦的一年就是去年了，应该是25年，就是压力最大，对于我来讲的话也是睡眠最差，然后整个的身体状况也最不好的一年。”</p>
-                
-                <p>尽管痛苦，但也兴奋：“上了F1这样的赛道里面……好处就是说我们说锻炼了队伍，然后也快速的让你知道整个组织哪些有问题，管理有哪些有问题。但是如果你能够快速的修复这些问题，一旦你开始如果能够有把这些都很好的纠错的话，我觉得对未来来讲的话还是一个非常好的一个基础。”</p>
-                
-                <p>王宁将2025年形容为“极限测试”：“作为一个15年的公司，作为一个不算年轻的公司，每年保持双数增长，大家认为都已经很好了。然后如果你能保持20%的增长，都是一个优秀的公司。但是你到了第15年突然200%的增长，你想整个其实大家运营团队的压力还是非常大的。”</p>
-            </div>
-        </section>
-        
-        <!-- 模块2：组织进化 - 深度提取 -->
-        <section id="organization" class="mb-24 bg-white/70 rounded-3xl p-10 lg:p-14">
-            <div class="section-header mb-8">
-                <span class="px-4 py-1 text-xs font-medium bg-[#9f1239] text-white rounded-3xl">02</span>
-                <h2 class="serif inline ml-4 text-4xl font-semibold">从团队到组织：15年公司的全新课题</h2>
-            </div>
-            <div class="grid md:grid-cols-12 gap-10">
-                <div class="md:col-span-7 prose text-lg space-y-6">
-                    <p>王宁今年最大的感受：“我今年最大的感受就是组织这个词，我觉得我们提的会比较多。以前都是提团队，我觉得现在就可能对我来讲的话，比较深的感受就是组织。因为以前大家都说刚开始创业的时候是一群朋友啊，然后梁山好汉让大家说从团伙变成了团队。但是现在是公司慢慢变大以后，你会发现已经不再是属于你一个个人，或者说也不再仅仅是你一些高管。大家的一个能力，或者说大家的一些成长，然后能够去解决这些问题。”</p>
-                    
-                    <p>公司已超过1万人：“它已经变成一个非常复杂的，像毛细血管一样然后一个组织。那你组织他，你就会发现他还是会有很多你以前不是说团队的，就是大家坐下来开个会解决的问题。他是一些还是你以前没有遇到过的各种各样的这种管理模式、管理方法，激励机制等等这些问题。所以说我们其实我觉得25年是真正意义上就开始思考，然后开始去去去探讨是组织是怎么发展的，组织遇到哪些问题，以及我们怎么才能够更加体系化的去搭建我们的组织，来应对未来的这些问题。”</p>
-                    
-                    <div class="my-8 bg-white rounded-3xl p-8 border border-[#9f1239]/20">
-                        <h4 class="font-semibold mb-4 accent-text">团队 vs 组织的核心区别</h4>
-                        <ul class="space-y-4">
-                            <li class="flex items-start gap-x-3"><span class="text-[#9f1239] text-3xl leading-none mt-px">•</span> 团队：核心高管坐下来一讨论就能解决问题</li>
-                            <li class="flex items-start gap-x-3"><span class="text-[#9f1239] text-3xl leading-none mt-px">•</span> 组织：全球不同文化、法律法规、工作方式，部门与部门、业务线与业务线、国家与国家之间出现“管理墙”</li>
-                            <li class="flex items-start gap-x-3"><span class="text-[#9f1239] text-3xl leading-none mt-px">•</span> 从“一个人和一个人对接”变成“一群人和另一群人的对接”</li>
-                            <li class="flex items-start gap-x-3"><span class="text-[#9f1239] text-3xl leading-none mt-px">•</span> 组织开始拥有自己的意志，超出个人意志</li>
-                        </ul>
-                    </div>
-                    
-                    <p class="italic">“对他很多时候他其实已经超出个人的意志了是吧？……组织可开始有自己的意志了这种感觉。”</p>
-                </div>
-                <div class="md:col-span-5">
-                    <div class="bg-neutral-950 text-white rounded-3xl p-8 h-full flex flex-col justify-between">
-                        <div>
-                            <p class="accent-text mb-4">王宁原话</p>
-                            <p class="text-xl">“以前刚开始创业的时候是一群朋友啊，然后梁山好汉让大家说从团伙变成了团队。但是现在公司慢慢变大以后，你会发现已经不再是属于你一个个人，或者说也不再仅仅是你一些高管大家的能力能够解决这些问题。”</p>
-                        </div>
-                        <div class="text-xs opacity-60 mt-12">—— 2025年组织能力建设成为核心课题</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- 模块3：全球化挑战 - 详细原文 -->
-        <section id="global" class="mb-24">
-            <div class="section-header mb-8">
-                <span class="px-4 py-1 text-xs font-medium bg-[#9f1239] text-white rounded-3xl">03</span>
-                <h2 class="serif inline ml-4 text-4xl font-semibold">海外扩张：从0到1到标准对齐</h2>
-            </div>
-            <div class="prose max-w-none text-lg leading-relaxed text-neutral-700 space-y-8">
-                <p>王宁分享海外心态变化：“我觉得海外这几年我的心态，我觉得我们变化整个团队对海外的心态变化速度会在加快。我觉得最早的时候我们对海外就觉得，我们内部说它它是一个0到1的过程，然后那可能他发声都已经很了不起了……当我在在某一个欧洲的某个街角，看到了一家要么是我们的店，或者说要么看到某个柜台有我们的产品，我们都觉得很兴奋，就是它发声了。”</p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
-                    <div class="bg-white p-8 rounded-3xl">
-                        <div class="uppercase text-xs mb-4 accent-text">早期心态（0→1）</div>
-                        <p class="text-xl">鲜花掌声大于要求，看到产品在海外出现就很兴奋</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-3xl">
-                        <div class="uppercase text-xs mb-4 accent-text">2025心态</div>
-                        <p class="text-xl">希望快速跟国内标准拉齐，运营标准大幅提高</p>
-                    </div>
-                </div>
-                
-                <p>海外团队压力巨大：“因为以前的时候所有都是给他鲜花掌声，然后就是我我们就是一起鼓掌，这件事情从0到1发生了。然后海外可以买到我们的产品，海外有我们的门店。但是毕竟其实海外的运营，很多国家他的运营团队比较是年轻或者整个我们海外团队他的时间也比较整个组织的建立的时间也比较早期，然后他一定会遇到各种各样的问题，我们现在其实一直在努力解决问题，就是希望让海外运营的标准快速的跟国内对齐。”</p>
-                
-                <p>巡店感受：“从这个工程的质量，这些完成的细节度，从陈列到商品管理，然后服务运营，其实这些方方面面可能就是如果比如说作为一个普通的顾客，可能感知上没那么强烈。但是我们其实还是属于一看就觉得他的可能还是两年前、三年前国内运营的水平还是有很大差距。”</p>
-                
-                <p class="bg-[#f8f1e3] p-8 rounded-3xl">“数据有可能很好看……好消息满天飞，是我们应该关心坏消息……如果你站在在总部每天看报表，这个地方又是增长很多倍，那个地方增长很多。但是你要是去当地一看，你会发现其实它它虽然数字是好看了，但是它具体本身它交付的整个流程其实是有问题。”</p>
-            </div>
-        </section>
-        
-        <!-- 模块4：IP战略与Labubu - 大量原文 -->
-        <section id="ip" class="mb-24 bg-white rounded-3xl p-10 lg:p-14">
-            <div class="section-header mb-8">
-                <span class="px-4 py-1 text-xs font-medium bg-[#9f1239] text-white rounded-3xl">04</span>
-                <h2 class="serif inline ml-4 text-4xl font-semibold">Labubu的长期主义：不做消耗，只做赋能</h2>
-            </div>
-            
-            <div class="space-y-10">
-                <div>
-                    <p class="text-xl">面对全球爆火，王宁团队选择反常识的“灭火”策略：“当拉布布最火的那个时间，我们是在灭火，我们不想让他太火，这个可能是一个反常识的。”</p>
-                    <ul class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <li class="flex items-start gap-x-4 bg-[#f8f1e3] p-6 rounded-3xl"><span class="accent-text text-4xl">01</span>暂停大量新品，25年新品推迟到26年</li>
-                        <li class="flex items-start gap-x-4 bg-[#f8f1e3] p-6 rounded-3xl"><span class="accent-text text-4xl">02</span>暂停线下营销，避免过度消耗</li>
-                        <li class="flex items-start gap-x-4 bg-[#f8f1e3] p-6 rounded-3xl"><span class="accent-text text-4xl">03</span>严格筛选授权，只做相互赋能</li>
+        <!-- Section 1 -->
+        <section id="sec1">
+            <h2 class="section-header">政策监管动态</h2>
+            <div class="news-grid">
+                <div class="card">
+                    <span class="card-emoji">📜</span>
+                    <h3 class="card-title">习近平就推动哲学社会科学高质量发展作出重要指示</h3>
+                    <ul>
+                        <li>中共中央总书记、国家主席、中央军委主席习近平近日就推动哲学社会科学高质量发展作出重要指示，强调坚持“两个结合”。</li>
+                        <li>党的十八大以来，哲学社会科学战线扎实推进知识创新、理论创新、方法创新，推出一批有价值的研究成果。</li>
+                        <li>新征程上要以新时代中国特色社会主义思想为指导，加快构建中国哲学社会科学自主知识体系。</li>
+                        <li>更好回答中国之问、世界之问、人民之问、时代之问，为中国式现代化建设贡献更多智慧和力量。</li>
+                        <li><strong class="ft-accent">指示强调</strong>深化党的创新理论体系化学理化研究阐释，坚持和加强党的全面领导。</li>
                     </ul>
                 </div>
-                
-                <div class="quote-block pl-8 py-2">
-                    <p class="text-2xl italic">“我们不想让他太火……我们是一个非使用类产品，还没有到真正意义上的大众消费。因为毕竟你是一个非使用类产品。我们相对来讲的话，其实它又不是一个那么的刚需或者那么的这个低单价的一个产品。对，而且我们现在可能每年服务的用户大概几千万。但是突然你想有如果有20亿人知道你的时候，其实绝大多数是你没办法服务他了。那你就有可能就有很多，也许他他也不是真正喜欢拉布布，他也是来看热闹……我们其实也一直在平衡，就怎么让真正的用户能够买到对它可持续更健康一些。”</p>
-                    <div class="mt-8 text-[#9f1239]">—— 王宁</div>
+                <div class="card">
+                    <span class="card-emoji">🌊</span>
+                    <h3 class="card-title">广东结束防汛Ⅳ级应急响应</h3>
+                    <ul>
+                        <li>广东省应急管理厅消息，经气象、水文部门会商，本轮强降雨已明显减弱，全省江河水情平稳。</li>
+                        <li>根据《广东省防汛防旱防风防冻应急预案》，省防总决定5月17日10时结束防汛Ⅳ级应急响应。</li>
+                        <li>全省防汛形势转入常态化管理，相关应急措施有序解除。</li>
+                        <li><strong class="ft-accent">水文监测</strong>显示主要江河水位已回落至警戒线以下。</li>
+                    </ul>
                 </div>
-                
-                <p>王宁对IP的独特理解：“以前我比如说故事这个事情……但我最近又觉得，其实如果电影类的IP它是一个电影明星的话，那会不会有可能比如说我们的IP是个体育明星？他完全是两个赛道……有可能这个体育赛道的明星的商业价值远远大过于电影明星。那你是不是还要讨论让梅西要去拍个电影呢？”</p>
-                
-                <p>即使要做电影，也更看重能力建设：“我更在意的是能力，就是你拥有这个能力，对，这个可能更有价值。”</p>
-            </div>
-        </section>
-        
-        <!-- 模块5：内容化探索 -->
-        <section id="content" class="mb-24">
-            <div class="section-header mb-8">
-                <span class="px-4 py-1 text-xs font-medium bg-[#9f1239] text-white rounded-3xl">05</span>
-                <h2 class="serif inline ml-4 text-4xl font-semibold">电影、游戏与“海军·空军·陆军”战略布局</h2>
-            </div>
-            <div class="grid md:grid-cols-12 gap-x-8 prose text-lg">
-                <div class="md:col-span-7">
-                    <p>王宁坦诚电影和游戏部门“不成功，但我们也在反思，但是我觉得可能这是一个必经之路，毕竟这个行业游戏和电影都是这么卷的一个行业。我们作为一个新人，你很多该交的学费还是要必须交。”</p>
-                    <p class="mt-6">战略比喻：“我理解就比如说我们现在做的新的一些业务，就是甜品、家电等等新的品类的尝试，有点像海军，就是星辰大海，我们去探索将来未知可能性。但是我觉得像游戏和电影，像空军，然后它的辐射范围可能会更更远。如果我我觉得在当然最理想状态，我们肯定是希望海军、空军、陆军都足够发展起来。对，但是现在来看的话，其实现在是属于陆军比较强，当然现在在逐渐的探索，希望有一天可以补足。”</p>
+                <div class="card">
+                    <span class="card-emoji">🏛️</span>
+                    <h3 class="card-title">宏观政策持续发力产业高质量发展</h3>
+                    <ul>
+                        <li>国家层面持续推动哲学社会科学服务党和国家工作大局，强化理论创新与实践结合。</li>
+                        <li>东数西算战略深化落地，算力基础设施建设进入“国芯国模”新阶段。</li>
+                        <li>地方政府积极出台保障房计划与数字经济扶持政策。</li>
+                        <li><strong class="ft-accent">深圳2026年住房计划</strong>筹建3万套、供应4万套保障房。</li>
+                        <li>韩国政府投入超1亿美元扶持半导体中小企业，覆盖高端战略材料。</li>
+                    </ul>
                 </div>
-                <div class="md:col-span-5">
-                    <div class="border border-[#9f1239]/30 rounded-3xl p-8 bg-white">
-                        <p class="text-sm uppercase mb-4 accent-text">三军布局</p>
-                        <div class="space-y-6 text-xl">
-                            <div class="flex justify-between border-b pb-4"><span>陆军</span><span class="font-medium">线下门店·强</span></div>
-                            <div class="flex justify-between border-b pb-4"><span>海军</span><span class="font-medium">甜品、家电等新品类探索</span></div>
-                            <div class="flex justify-between"><span>空军</span><span class="font-medium">电影·游戏（辐射更远）</span></div>
-                        </div>
-                    </div>
+                <div class="card">
+                    <span class="card-emoji">📈</span>
+                    <h3 class="card-title">资本市场监管动态观察</h3>
+                    <ul>
+                        <li>科创板企业动态持续活跃，Token工厂、具身智能等新兴赛道获政策支持。</li>
+                        <li>上交所企业动态显示航天、AI算力项目签约落地加速。</li>
+                        <li>一级市场融资活跃度高，航空航天与具身智能赛道领跑。</li>
+                    </ul>
                 </div>
             </div>
         </section>
-        
-        <!-- 金句墙 - 大幅增加 -->
-        <div class="mb-24">
-            <h2 class="serif text-3xl mb-8 flex items-center"><span class="text-[#9f1239] mr-4">◆</span> 王宁金句精选（更多原文摘录）</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="quote-block bg-white p-8 rounded-3xl text-lg">“大家去都在通过表象的东西，大家去去看多和看空……没有人去讨论他背后的世界观，他背后的艺术家，他背后的设计，然后我们对他这个系统的运营等等这些。”</div>
-                <div class="quote-block bg-white p-8 rounded-3xl text-lg">“保持专注，保持初心，然后keep focus，keep real，这是今年的专业知识。”</div>
-                <div class="quote-block bg-white p-8 rounded-3xl text-lg">“所有东西是都是都是人在做是不管你尊重时间也好，尊重经验也好，其实本质上是尊重人，就尊重团队的成长，然后让大家耐下心来去一件一件事情。”</div>
-                <div class="quote-block bg-white p-8 rounded-3xl text-lg">“我们希望有一天能真正的去变成一个非常相对战斗力很强的一家企业的话，如果海陆空的话，我觉得现在来看的话，我们还是具有比较强的陆军。”</div>
-                <div class="quote-block bg-white p-8 rounded-3xl text-lg">“其实全球化是相当于是你已经之前验证过的商业模式，然后去更多的国家和地区扩张了。集团化就像是你去发现更多的这种可能性。”</div>
-                <div class="quote-block bg-white p-8 rounded-3xl text-lg">“我们需要极致的线下体验，然后你才能够去去吸引到大家。如果线上都已经就是体验课这么好的，那那你如果想要吸引到大家来线下的话，那你就需要更加极致的线下体验。”</div>
-            </div>
-        </div>
-        
-        <!-- 模块6：未来思考与集团化 -->
-        <section id="future" class="mb-20">
-            <div class="section-header mb-8">
-                <span class="px-4 py-1 text-xs font-medium bg-[#9f1239] text-white rounded-3xl">06</span>
-                <h2 class="serif inline ml-4 text-4xl font-semibold">集团化、奢侈品借鉴与AI时代线下体验</h2>
-            </div>
-            <div class="prose max-w-none text-lg space-y-8">
-                <p>王宁明确战略：“我们IPO的时候不是两个战略，一个是全球化，一个是集团化。集团化就是以IP为核心的一个产业化。”全球化已成功验证，下一步是集团化。</p>
-                
-                <p>向奢侈品牌学习：“每个品牌都都得有自己看家的东西，可能每年都有60%的东西，这是看家，但是可能就不要再做太大的不需要做太大的创新，但是你需要把这个看家东西不断的完善的，有40%的在要做持续的创新的。”</p>
-                
-                <p>对标与创新：“我们也一样，当然我们觉得有很多企业，他有他自己非常成熟的一个体系和理念。你不管学习迪士尼对于埃批的这种尊重和运营，还是像这个LVMH他们对这个品牌的打造，但是我们现在也在想去用，因为毕竟我们现在做的事情是别人没有做过的事情。它是一个新的品类。”</p>
-                
-                <p>AI时代思考：“我们会思考未来人的生活方式。对，我觉得可能未来也许十年以后，就是大家会分级。一个是属于大家去追求极致的线上体验……那么就同样的那你就会需要更极致的线下体验……对于我们来讲的话，其实我觉得我们现在有一个。这个能力就属于线下的一个能力。所以说现在我们可能更关注的是如何去做到可能未来更极致的线下体验。这也是为什么可能如果比起AI来讲的话，我们现在投入更多的是我们线下的乐园。”</p>
-                
-                <div class="flex gap-8 mt-12 text-sm font-medium bg-white rounded-3xl p-8 items-center">
-                    <div class="flex-1">不担心Labubu突然不受欢迎</div>
-                    <div class="text-4xl text-[#9f1239]">×</div>
-                    <div class="flex-1">真正担心组织问题缓慢释放，一美遮百丑</div>
+
+        <!-- Section 2 -->
+        <section id="sec2">
+            <h2 class="section-header">AI算力与Token基础设施</h2>
+            <div class="news-grid">
+                <div class="card">
+                    <span class="card-emoji">⚡</span>
+                    <h3 class="card-title">无锡落地首个东数西算·算电融合特大型Token工厂</h3>
+                    <ul>
+                        <li>弘信电子联手无锡高新区打造江苏省内首个华为昇腾384超节点算力集群。</li>
+                        <li>首批部署4台华为昇腾384超节点服务器，每套384卡规模，组成超级集群。</li>
+                        <li>将成为规模化、高性能“国芯国模”算力集群新样板。</li>
+                        <li><strong class="ft-accent">项目意义</strong>：为长三角AI产业高质量发展注入新动能。</li>
+                        <li>依托华为超节点，算力进入“智能单元计费”时代。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">📦</span>
+                    <h3 class="card-title">中国电信推出试商用Token套餐</h3>
+                    <ul>
+                        <li>面向开发者及中小微企业：三档Token Plan，最低每月39.9元提供1500万tokens。</li>
+                        <li>面向个人及家庭客户：最低9.9元/月提供1000万tokens。</li>
+                        <li>可选宽带上行提速包与安全防护包。</li>
+                        <li>面向生态伙伴即将推出天翼Token币和Token权益。</li>
+                        <li><strong class="ft-accent">一号通用</strong>、跨平台使用、话费支付。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">📱</span>
+                    <h3 class="card-title">上海移动5G-A超级上行网络规模商用 推出Token普惠服务</h3>
+                    <ul>
+                        <li>1元40万Tokens，实现“一个额度、一个价格、任选模型”。</li>
+                        <li>支持话费账单支付，联合腾讯推出AI原生工作台。</li>
+                        <li>家庭万兆光网建设，下行万兆、上行千兆极致体验。</li>
+                        <li>“天通+北斗”双星通信，手机直连卫星。</li>
+                        <li>AI慧申活升级计划，具身智能、Token普惠走进家庭。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">🔗</span>
+                    <h3 class="card-title">云天励飞发起“1001计划” 目标百亿Token 1分钱</h3>
+                    <ul>
+                        <li>联合财联社等近30家单位签署倡议，推动AI推理成本持续优化。</li>
+                        <li>在芯片、模型、软件栈、算力基础设施和应用生态协同探索。</li>
+                        <li>“浦云天芯——云天励飞全球创新中心”在沪揭牌。</li>
+                        <li><strong class="ft-accent">长期目标</strong>：降低AI应用成本，共建国产AI生态。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">🛡️</span>
+                    <h3 class="card-title">中国联通上海发布全栈国产化“国芯国模国云”安全基座</h3>
+                    <ul>
+                        <li>依托临港智算中心，完成近百款行业大模型国产化适配。</li>
+                        <li>推出多元化算力服务、多档Token产品及融合套餐。</li>
+                        <li>启动算力普惠行动，升级模型服务与智能体超市。</li>
+                        <li>构建自主可控、安全可靠的人工智能基础设施体系。</li>
+                    </ul>
                 </div>
             </div>
         </section>
-        
-        <!-- 结语 -->
-        <div class="bg-neutral-950 text-white rounded-3xl p-12 lg:p-16 text-center max-w-3xl mx-auto">
-            <p class="text-3xl serif mb-8 leading-tight">“我们希望有一天能成为世界级的消费品公司，每个国家的占比应该接近它在全球GDP的占比。”</p>
-            <p class="text-[#9f1239] text-sm tracking-widest">—— 王宁</p>
-            <div class="mt-12 pt-12 border-t border-white/20 text-xs flex flex-wrap justify-center gap-x-8 gap-y-3 opacity-70">
-                <div>专注IP本身</div>
-                <div>保持长期主义</div>
-                <div>尊重组织成长</div>
-                <div>构建物理世界陪伴感</div>
-                <div>从全球化迈向集团化</div>
-                <div>极致线下体验</div>
-            </div>
-        </div>
-    </main>
-    
-    <!-- 页脚 -->
-    <footer class="bg-neutral-950 text-white/70 py-12 text-xs">
-        <div class="max-w-screen-2xl mx-auto px-8 lg:px-12">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="flex items-center gap-x-8">
-                    <div>© 2026 泡泡玛特 × 李翔详谈</div>
-                    <div class="hidden md:block text-white/40">单文件HTML · Tailwind 3.4+ · 内容完整提取</div>
+
+        <!-- Section 3 -->
+        <section id="sec3">
+            <h2 class="section-header">半导体芯片产业</h2>
+            <div class="news-grid">
+                <div class="card">
+                    <span class="card-emoji">📊</span>
+                    <h3 class="card-title">长鑫科技预计上半年营收1100-1200亿元 扣非归母净利润520-580亿元</h3>
+                    <ul>
+                        <li>科创板IPO招股说明书（申报稿）披露：2026年1-6月营收同比增长612.53%-677.31%。</li>
+                        <li>净利润660-750亿元，归母净利润500-570亿元。</li>
+                        <li>一季度营收508亿元，同比增长719.13%；净利润330.12亿元。</li>
+                        <li><strong class="ft-accent">DRAM供不应求</strong>价格大幅上涨，产销规模与产品结构优化驱动增长。</li>
+                    </ul>
                 </div>
-                <div class="mt-6 md:mt-0 flex items-center gap-x-6 text-[10px] uppercase tracking-widest">
-                    <a href="#" class="hover:text-[#9f1239]">回到顶部</a>
-                    <a href="#" class="hover:text-[#9f1239]">完整视频播客</a>
-                    <a href="#" class="hover:text-[#9f1239]">前书《详谈》</a>
+                <div class="card">
+                    <span class="card-emoji">🇨🇳</span>
+                    <h3 class="card-title">美光深耕中国市场 期待深化AI存储合作</h3>
+                    <ul>
+                        <li>中国仍是全球最具活力的半导体市场之一。</li>
+                        <li>过去20余年与本土客户及合作伙伴推动存储技术创新。</li>
+                        <li>期待把握AI时代存储技术新机遇。</li>
+                        <li><strong class="ft-accent">中国业务</strong>仍是美光全球重要组成部分。</li>
+                    </ul>
                 </div>
-                <div class="mt-6 md:mt-0 text-white/30">高度模块化 · 深度内容可视化 · 极简优雅</div>
+                <div class="card">
+                    <span class="card-emoji">🗣️</span>
+                    <h3 class="card-title">中微半导体董事长：希望国内客户给设备公司更多机会</h3>
+                    <ul>
+                        <li>国内大部分客户愿意用国产设备，但先入为主认为国外设备更好。</li>
+                        <li>领先公司历练两三年后拿到中国市场。</li>
+                        <li>呼吁给予设备公司更多国产化机会。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">📦</span>
+                    <h3 class="card-title">三星Exynos 2700或放弃FOWLP先进封装工艺</h3>
+                    <ul>
+                        <li>成本增加导致重新评估盈利能力。</li>
+                        <li>技术曾改善散热性能，但制造成本上升。</li>
+                        <li>芯片正为明年旗舰手机开发。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">🇰🇷</span>
+                    <h3 class="card-title">韩国投入超1亿美元扶持半导体中小企业</h3>
+                    <ul>
+                        <li>1700亿韩元（约1.133亿美元）支持高端战略材料、零部件及装备。</li>
+                        <li>覆盖尖端半导体及相关产业。</li>
+                        <li>项目申报截止日期7月17日。</li>
+                    </ul>
+                </div>
             </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section id="sec4">
+            <h2 class="section-header">卫星航天与遥感技术</h2>
+            <div class="news-grid">
+                <div class="card">
+                    <span class="card-emoji">🛰️</span>
+                    <h3 class="card-title">长光卫星8颗卫星今日出征 近期发射</h3>
+                    <ul>
+                        <li>在吉林省航天信息产业园举行“文物01星”“彩云光学01星”“安铁03星”“利川红”卫星等8颗出征仪式。</li>
+                        <li>“文物01星”面向国家文物局文化遗产保护。</li>
+                        <li>“彩云光学01星”面向云南地矿集团高分辨光学遥感。</li>
+                        <li>“安铁03星”服务福建茶产业遥感需求。</li>
+                        <li>将于近期在酒泉卫星发射中心发射。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">🌍</span>
+                    <h3 class="card-title">北斗导航产业2025年产值超6000亿元 2026年有望达1.3万亿元</h3>
+                    <ul>
+                        <li>产业规模持续高速增长。</li>
+                        <li>应用场景不断拓展。</li>
+                        <li>为卫星遥感与航天技术提供强劲支撑。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">🚀</span>
+                    <h3 class="card-title">航天信息产业园卫星集群项目加速落地</h3>
+                    <ul>
+                        <li>长光卫星技术股份有限公司多项高分辨光学遥感卫星联合打造。</li>
+                        <li>服务文化遗产、矿产勘探、农业、茶产业等多领域。</li>
+                        <li>推动卫星遥感技术商业化应用。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section id="sec5">
+            <h2 class="section-header">具身智能与机器人技术</h2>
+            <div class="news-grid">
+                <div class="card">
+                    <span class="card-emoji">🤖</span>
+                    <h3 class="card-title">摩尔线程与国家具身智能应用中试基地签署战略合作协议</h3>
+                    <ul>
+                        <li>5月16日在杭州具身智能创新发展大会上，国家人工智能应用中试基地（具身智能）正式揭牌。</li>
+                        <li>摩尔线程成为共建合伙人并担任产业委员会委员。</li>
+                        <li>成立“具身智能算力与仿真联合实验室”。</li>
+                        <li><strong class="ft-accent">加速人形机器人</strong>场景化落地。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">💰</span>
+                    <h3 class="card-title">众擎机器人战略投资飞阔科技 加速人形机器人规模化运营</h3>
+                    <ul>
+                        <li>双方共同打造落地案例，推动从“单点展示”走向“规模化运营”。</li>
+                        <li>飞阔科技Fly OS V3.0 AI数智中枢系统已在众擎多款产品适配。</li>
+                        <li>覆盖文旅导览、商业接待、教育科研等场景。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">📐</span>
+                    <h3 class="card-title">Fraunhofer IPA发布人形机器人新测试基准</h3>
+                    <ul>
+                        <li>用于工业应用场景，满足应用相关性标准。</li>
+                        <li>第三方分析基准工具正式推出。</li>
+                        <li>推动人形机器人商业化落地。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">🧠</span>
+                    <h3 class="card-title">Agentic AI赋能通用机器人导航</h3>
+                    <ul>
+                        <li>结合感知、SLAM、推理与规划，实现动态环境导航。</li>
+                        <li>全球机器人创始人强调系统思维重要性。</li>
+                        <li>北美机器人订单保持平稳，应用扩展至非汽车领域。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6 -->
+        <section id="sec6">
+            <h2 class="section-header">上市公司动态与业绩</h2>
+            <div class="news-grid">
+                <div class="card">
+                    <span class="card-emoji">📈</span>
+                    <h3 class="card-title">招商策略：A股非金融上市公司开启新一轮产能扩张周期</h3>
+                    <ul>
+                        <li>2026Q1在建工程同比增速触底回升，资本开支增速转正3.2%。</li>
+                        <li>信息技术、中游制造业、资源品为主要驱动。</li>
+                        <li>多数行业产能去化后资本开支普遍转正。</li>
+                        <li><strong class="ft-accent">领先信号</strong>：资本开支增速领先在建工程约一年。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">📉</span>
+                    <h3 class="card-title">星巴克宣布在美国关闭多个地区办公室并裁员300人</h3>
+                    <ul>
+                        <li>当地时间5月15日宣布，以削减成本、重回增长轨道。</li>
+                        <li>重组费用约4亿美元，包括遣散费和资产减值。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">🔋</span>
+                    <h3 class="card-title">国轩高科：2030年固态电解质产能10万吨/年</h3>
+                    <ul>
+                        <li>2026年建成2000吨/年固态电解质产能。</li>
+                        <li>可满足100GWh固态电池需求。</li>
+                        <li>同步规划硫化锂产能达5万吨/年。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">🚗</span>
+                    <h3 class="card-title">法拉第未来宣布获得2500万美元融资</h3>
+                    <ul>
+                        <li>与机构投资者签署股份购买协议。</li>
+                        <li>1250万美元直接汇入运营账户，其余监管账户条件释放。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7 -->
+        <section id="sec7">
+            <h2 class="section-header">国际市场联动与投融资</h2>
+            <div class="news-grid">
+                <div class="card">
+                    <span class="card-emoji">💼</span>
+                    <h3 class="card-title">贝莱德考虑对SpaceX首次公开募股投资50-100亿美元</h3>
+                    <ul>
+                        <li>IPO募资规模最高可达750亿美元。</li>
+                        <li>代表全球最大资产管理公司对马斯克旗下企业投下信任票。</li>
+                        <li><strong class="ft-accent">知情人士透露</strong>下个月完成讨论。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">🏭</span>
+                    <h3 class="card-title">ASML与Tata Electronics合作 在印度建110亿美元300mm晶圆厂</h3>
+                    <ul>
+                        <li>扩大印度本土芯片生产能力。</li>
+                        <li>古吉拉特邦项目落地。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">📊</span>
+                    <h3 class="card-title">一级市场本周融资总额约90.14亿元 航空航天、具身智能活跃</h3>
+                    <ul>
+                        <li>108起投融资事件，先进制造、集成电路、AI等领域活跃。</li>
+                        <li>汽车出行披露融资总额最多，约20.20亿元。</li>
+                        <li>启境汽车、载合卡车各完成10亿元级战略融资。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">🌐</span>
+                    <h3 class="card-title">Techmeme海外科技快讯汇总</h3>
+                    <ul>
+                        <li>Nectar Social获3000万美元A轮融资，Menlo Ventures领投。</li>
+                        <li>越南政府将游戏列为关键文化产业。</li>
+                        <li>德州Hill County通过数据中心一年禁令。</li>
+                        <li>Pwn2Own Berlin 2026 Day 2攻破15个零日漏洞获38.5万美元奖金。</li>
+                        <li>美国AI暴露职业就业微降0.2%。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8 -->
+        <section id="sec8">
+            <h2 class="section-header">新兴产业趋势与宏观观察</h2>
+            <div class="news-grid">
+                <div class="card">
+                    <span class="card-emoji">🎥</span>
+                    <h3 class="card-title">2026电影总票房已超144亿元</h3>
+                    <ul>
+                        <li>截至5月17日含预售突破144亿元。</li>
+                        <li>文化消费市场持续回暖。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">🏠</span>
+                    <h3 class="card-title">深圳发布2026年住房发展计划</h3>
+                    <ul>
+                        <li>筹建3万套、供应4万套保障房。</li>
+                        <li>推进“好房子”试点与城中村改造。</li>
+                        <li>增强市民获得感、幸福感、安全感。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">📉</span>
+                    <h3 class="card-title">欧洲国债收益率高企 通胀或推动央行加息</h3>
+                    <ul>
+                        <li>国际油价高位运行，市场预期欧洲通胀回升。</li>
+                        <li>德国、英国长期国债收益率连续走高。</li>
+                        <li>欧洲央行可能更长时间维持高利率。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">🥩</span>
+                    <h3 class="card-title">阿根廷牛肉消费量降至20年来最低水平</h3>
+                    <ul>
+                        <li>人均年消费量减少5公斤。</li>
+                        <li>牛肉价格上涨、居民购买力下降及出口增长所致。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">🔋</span>
+                    <h3 class="card-title">中国团队研发气固态氢电池等多项新兴技术进展</h3>
+                    <ul>
+                        <li>固态电池产能规划加速推进。</li>
+                        <li>下一代能源存储技术获突破。</li>
+                        <li>NextEra潜在660亿美元收购Dominion能源资产。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 信息来源 & 免责声明 -->
+        <div style="background:#fff; border:1px solid #d4d4d4; border-radius:8px; padding:32px; margin-top:2rem; font-size:14px;">
+            <h2 style="font-family:Georgia,serif; font-size:20px; color:#002f5f; margin-bottom:16px;">信息来源</h2>
+            <p style="margin-bottom:12px;">本报内容基于科创板日报、36氪、财联社、Techmeme、Hacker News、Engadget、The Robot Report等权威媒体2026年5月17-18日实时报道编译整理。</p>
+            <h2 style="font-family:Georgia,serif; font-size:20px; color:#002f5f; margin:24px 0 16px;">免责声明</h2>
+            <p>本网页所载信息仅供参考，不构成任何投资建议。资本市场有风险，投资需谨慎。所有数据及观点来源于公开信息，不代表本报立场。FT风格呈现旨在提供专业、及时的市场洞察。</p>
         </div>
-    </footer>
+    </div>
+
+    <!-- 底部版权 -->
+    <div class="footer">
+        <p>© 2026 资本市场早间快报 · FT专业报纸风格呈现</p>
+        <p>本页面严格遵循FT.com极简专业设计规范 · 响应式适配手机端 · 总新闻条目：128条</p>
+        <p>数据更新至2026年5月18日早间 · 如需转载请注明出处</p>
+    </div>
 
     <script>
-        // Tailwind 初始化
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log('%c✅ 泡泡玛特王宁2026访谈高端展示页已就绪 | 内容大幅扩展 · 深色系accent', 'color:#9f1239; font-family:monospace; font-size:11px')
-        })
+        // 简单平滑滚动支持目录链接
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
     </script>
 </body>
 </html>
