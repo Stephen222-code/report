@@ -21,7 +21,7 @@
             font-family: 'Noto Sans SC', Georgia, serif;
             background-color: var(--ft-beige);
             color: var(--ft-text);
-            line-height: 1.7;
+            line-height: 1.75;
         }
         
         .ft-header {
@@ -32,8 +32,6 @@
             align-items: center;
             justify-content: space-between;
             font-family: Georgia, serif;
-            position: relative;
-            z-index: 10;
         }
         
         .ft-header-left {
@@ -54,6 +52,7 @@
         .ft-header-title {
             font-size: 22px;
             font-weight: 500;
+            line-height: 1.2;
         }
         
         .ft-header-date {
@@ -153,6 +152,8 @@
             margin-bottom: 18px;
             color: var(--ft-navy);
             font-family: Georgia, serif;
+            border-bottom: 1px solid #d4d4d4;
+            padding-bottom: 10px;
         }
         
         .ft-accent { color: var(--ft-accent); font-weight: 500; }
@@ -166,54 +167,72 @@
         
         th, td {
             border: 1px solid #d4d4d4;
-            padding: 10px 14px;
+            padding: 12px 14px;
             text-align: left;
+            vertical-align: top;
         }
         
         th { background: #f8f4eb; font-weight: 500; }
         
         .chart-container {
             position: relative;
-            margin: 24px 0 16px;
-            padding: 16px;
+            margin: 28px 0 20px;
+            padding: 20px;
             background: #fff;
             border: 1px solid #d4d4d4;
             border-radius: 4px;
         }
         
         .chart-title {
-            font-size: 15px;
+            font-size: 16px;
             text-align: center;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             color: #1a1a1a;
+            font-weight: 500;
+        }
+        
+        .chart-note {
+            font-size: 13px;
+            color: #555;
+            text-align: center;
+            margin-top: 8px;
+            line-height: 1.5;
         }
         
         .insight {
             background: #f8f4eb;
             border-left: 4px solid var(--ft-navy);
-            padding: 16px 20px;
-            margin-top: 20px;
-            font-size: 15px;
-            line-height: 1.6;
+            padding: 20px 24px;
+            margin: 24px 0 12px;
+            font-size: 15.2px;
+            line-height: 1.65;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .insight ul {
+            margin-top: 14px;
+            padding-left: 20px;
         }
         
         .footer {
             background: #fff;
             border-top: 1px solid #d4d4d4;
-            padding: 32px 40px;
+            padding: 40px 40px 28px;
             margin-top: 60px;
             font-size: 13px;
             color: #555;
             text-align: center;
+            line-height: 1.6;
         }
         
         .disclaimer {
             background: #fff;
             border: 1px solid #d4d4d4;
             border-radius: 4px;
-            padding: 24px;
+            padding: 28px 32px;
             margin: 1.75rem 0;
-            font-size: 14px;
+            font-size: 14.5px;
+            line-height: 1.7;
         }
         
         h1, h2, h3 { font-family: Georgia, serif; }
@@ -242,210 +261,234 @@
         <div class="toc-card">
             <div class="toc-title">目录</div>
             <div class="toc-links">
-                <a href="#sec1">1. 行业展望：零食折扣店重塑零售格局</a>
-                <a href="#sec2">2. 公司定位：规模扩张与利润提升路径</a>
-                <a href="#sec3">3. 门店网络扩张与单店经济模型</a>
-                <a href="#sec4">4. 产品策略：从“零食”到“零食+”转型</a>
-                <a href="#sec5">5. 财务预测与估值分析</a>
-                <a href="#sec6">6. 竞争格局与市场天花板评估</a>
-                <a href="#sec7">7. 情景分析：上行与下行风险</a>
-                <a href="#sec8">8. 投资建议与行动要点</a>
+                <a href="#sec1">1. 行业展望：零食折扣店重塑中国零售格局</a>
+                <a href="#sec2">2. Busy Ming战略定位：规模化扩张与多维度利润提升路径</a>
+                <a href="#sec3">3. 门店网络扩张与单店经济模型详解</a>
+                <a href="#sec4">4. 产品结构优化：从“零食”到“零食+”的战略转型</a>
+                <a href="#sec5">5. 财务预测、毛利率驱动因素与DCF估值分析</a>
+                <a href="#sec6">6. 竞争格局、双寡头格局与全国门店天花板测算</a>
+                <a href="#sec7">7. 情景分析：上行/下行风险与估值敏感性</a>
+                <a href="#sec8">8. 投资建议、关键催化剂与行动要点</a>
             </div>
         </div>
 
         <!-- 板块1 -->
         <section id="sec1">
-            <h2 class="section-header">1. 行业展望：零食折扣店重塑零售格局</h2>
+            <h2 class="section-header">1. 行业展望：零食折扣店重塑中国零售格局</h2>
             <div class="grid-two">
-                <!-- 原文要点 -->
                 <div class="card">
-                    <div class="card-title">原文要点</div>
-                    <p>中国零食饮料零售市场规模约 <span class="ft-accent">Rmb4trn</span>，正经历从传统超市向价值零售（零食折扣店）的结构性迁移。2019-2025年零食折扣店实现 <span class="ft-accent">76% CAGR</span>，2025-2029年预计 <span class="ft-accent">23% CAGR</span>，销售额从2025E的 <span class="ft-accent">Rmb210bn</span> 增至2029E的 <span class="ft-accent">Rmb485bn</span>，市场份额从5%升至10%。门店数量目前约5.6万家，潜在天花板约8万家，中期增长超40%。</p>
+                    <div class="card-title">原文要点（忠实提取）</div>
+                    <p>中国零食饮料零售市场规模接近 <span class="ft-accent">Rmb4trn</span>（2025E约Rmb3,965bn），正经历从传统超市/杂货店向价值零售（零食折扣店）的长期结构性迁移。2019-2025年零食折扣店实现 <span class="ft-accent">76.3% CAGR</span>，2025-2029年UBS预测 <span class="ft-accent">23.3% CAGR</span>，渠道销售额将从2025E的 <span class="ft-accent">Rmb210bn</span> 增长至2029E的 <span class="ft-accent">Rmb485bn</span>，在整个零食饮料零售市场的份额从5%提升至10%。目前全国门店约56,000家，潜在天花板约80,000家，中期门店数量增长空间超过40%。</p>
                     <div class="chart-container">
                         <canvas id="marketCAGR"></canvas>
+                        <div class="chart-note">数据来源：F&amp;S、NBS、UBS estimates。柱状图显示2019-2025与2025-2029两个关键增长阶段的CAGR对比，清晰体现零食折扣店作为渠道变革核心引擎的爆发式增长。</div>
                     </div>
-                    <p class="insight">数据来源：F&amp;S、UBS预测。零食折扣店凭借精简供应链、快速周转与消费降级趋势，成为渠道变革核心驱动因素。</p>
+                    <p class="insight"><strong>详细洞见解读：</strong><br>
+                    零食折扣店的崛起并非短期现象，而是中国零售渠道“碎片化+去中心化”大趋势的必然结果。传统KA渠道（超市/大卖场）加价率高达55%，而零食折扣店通过直接上游采购将渠道加价率压缩至36%，价格优势直接传导至消费者达25%。在消费降级背景下，该模式完美匹配了“高性价比+高SKU多样性+快速周转”的需求。<br>
+                    • 宏观支撑：食品制造业长期过剩 + 高效低成本物流网络 + 高人口密度带来的快速库存周转 + 传统零售老化形成的竞争真空<br>
+                    • 渠道份额演变：2019-2025年超市/杂货店GMV CAGR仅3.9%/4.4%，而专业零售/电商为14.2%/9.6%；2025-2029年预计超市份额继续下降至43%，零食折扣店份额翻倍<br>
+                    • 战略含义：零食折扣店已成为国内零食品牌（卫龙、洽洽等）2025年收入贡献25-30%的核心增量渠道</p>
                 </div>
                 
-                <!-- 深度解读 -->
                 <div class="card">
                     <div class="card-title">深度解读</div>
-                    <p>零食折扣店的崛起本质是供应链重构与消费者偏好双重驱动。传统KA渠道加价率55%，折扣店仅36%，价格优势达25%，直接传导给消费者。在消费降级背景下，该模式填补了中低线市场“高性价比+高品种”的空白。UBS预测2025-2029年渠道渗透率翻倍，意味着传统超市/杂货店份额将进一步压缩至43%/21%。长期看，零食折扣店不仅是零食品类增长引擎，更是线下零售数字化转型的先锋。</p>
-                    <ul style="margin-top:18px; padding-left:18px; font-size:15px;">
-                        <li>宏观背景：食品制造业过剩+高效物流+高人口密度，构成“硬折扣”经济基础</li>
-                        <li>风险：若宏观消费持续疲软，单店GMV下滑可能加速</li>
-                        <li>机会：向“折扣超市”业态升级，品类延伸至日用百货，扩张天花板或超10万家</li>
+                    <p>零食折扣店的成功本质上是供应链重构与消费趋势的双轮驱动。相比传统零售，折扣店缩短了“生产商→分销商→零售商”的多层链条，直接实现“生产商→折扣店系统+加盟店”的扁平化，显著提升渠道效率并降低成本。结合Frost &amp; Sullivan数据，专业零售渠道2019-2025年已实现14.2% CAGR，零食折扣店作为其中最亮眼的子赛道，2025-2029年将继续以23.3%的速度扩张。</p>
+                    <ul style="margin-top:18px; padding-left:20px; font-size:15.2px; line-height:1.7;">
+                        <li>长期结构性机会：即使宏观消费环境温和，零食作为“刚需+社交+休闲”品类仍保持5.7% CAGR，远高于整体F&amp;B 4.6%</li>
+                        <li>潜在风险：若低线市场渗透过快，可能出现局部饱和；但UBS三种方法（人口密度、省份基准、城市分层、市场规模）测算全国天花板仍达80,592家</li>
+                        <li>行动建议：品牌方应优先布局折扣店定制SKU（小包装、个性化口味），零售商则需加速向“折扣超市3.0”业态升级（SKU&gt;2000，新增日用百货）</li>
                     </ul>
+                    <p style="margin-top:22px; font-size:15px;">结论：零食折扣店正在重塑中国线下零售版图，成为消费降级时代最确定的结构性增长赛道。</p>
                 </div>
             </div>
         </section>
 
         <!-- 板块2 -->
         <section id="sec2">
-            <h2 class="section-header">2. 公司定位：规模扩张与利润提升路径</h2>
+            <h2 class="section-header">2. Busy Ming战略定位：规模化扩张与多维度利润提升路径</h2>
             <div class="grid-two">
                 <div class="card">
-                    <div class="card-title">原文要点</div>
-                    <p>Busy Ming为中国领先零食饮料价值零售商，2024年GMV超 <span class="ft-accent">Rmb55.5bn</span>，位列零食饮料连锁第一、F&amp;B连锁第四。预计2025-2027年收入/经常性净利润CAGR分别为 <span class="ft-accent">17%/23%</span>。核心增长引擎为门店扩张（2025-2027年末门店数21,000/24,000/27,000家），辅以“零食+”策略、单店销售稳定化及规模化毛利率扩张。</p>
+                    <div class="card-title">原文要点（关键数据表格）</div>
                     <table>
-                        <tr><th>关键指标</th><th>2025E</th><th>2026E</th><th>2027E</th></tr>
-                        <tr><td>门店净增</td><td>+7,000</td><td>+3,000</td><td>+3,000</td></tr>
-                        <tr><td>毛利率</td><td>9.8%</td><td>10.1%</td><td>10.4%</td></tr>
-                        <tr><td>SG&amp;A比率</td><td>5.1%</td><td>4.9%</td><td>4.8%</td></tr>
+                        <thead><tr><th>关键指标</th><th>2025E</th><th>2026E</th><th>2027E</th><th>YoY变化</th></tr></thead>
+                        <tbody>
+                            <tr><td>门店数（年末）</td><td>21,000</td><td>24,000</td><td>27,000</td><td>+47% / +15% / +11%</td></tr>
+                            <tr><td>收入（Rmb bn）</td><td>64.15</td><td>79.85</td><td>88.41</td><td>+63% / +24% / +11%</td></tr>
+                            <tr><td>毛利率</td><td>9.8%</td><td>10.1%</td><td>10.4%</td><td>+2.2ppt / +0.3ppt / +0.3ppt</td></tr>
+                            <tr><td>SG&amp;A比率</td><td>5.1%</td><td>4.9%</td><td>4.8%</td><td>+0.3ppt / -0.2ppt / -0.1ppt</td></tr>
+                            <tr><td>经常性净利润率</td><td>3.9%</td><td>4.2%</td><td>4.3%</td><td>+1.6ppt / +0.3ppt / +0.1ppt</td></tr>
+                        </tbody>
                     </table>
+                    <p>UBS预测2025-2027年收入/经常性净利润CAGR分别为17%/23%，ROIC维持60%以上。</p>
                 </div>
                 <div class="card">
-                    <div class="card-title">深度解读</div>
-                    <p>Busy Ming通过2023年Busy For You与ZhaoYiMing合并，快速形成全国性网络（下沉至59%县镇市场），建立难以复制的规模壁垒。未来三年，规模效应将转化为三重利润驱动：（1）供应链议价力提升，（2）私域品牌渗透率上升，（3）运营杠杆释放。预计经常性净利润率从2025E的3.9%升至2027E的4.3%，ROIC维持在60%以上，展现显著资本回报优势。</p>
+                    <div class="card-title">深度解读 + 可视化驱动因素</div>
                     <div class="chart-container">
                         <canvas id="profitDrivers"></canvas>
+                        <div class="chart-note">数据来源：UBS estimates。折线图展示毛利率与经常性净利润率双轨提升路径，清晰反映规模效应、供应链优化与产品结构调整三重驱动。</div>
                     </div>
-                    <p class="insight">战略含义：公司不仅是渠道整合受益者，更是零食品牌必须拥抱的核心分销伙伴，议价地位将持续强化。</p>
+                    <p class="insight"><strong>详细专业解读（8条核心洞见）：</strong><br>
+                    1. Busy Ming通过2023年合并形成全国性网络，已覆盖28省、1,341县，59%门店位于县镇市场，下沉优势显著。<br>
+                    2. 规模壁垒转化为供应链议价力：2024年GMV超Rmb55.5bn，成为多数零食品牌最重要的增量渠道。<br>
+                    3. “零食+”策略（饮料占比升至27%）+私域标签（2025年起推出，价格较竞品低28%）将同步驱动客流与毛利率。<br>
+                    4. 运营杠杆释放：固定成本随门店扩张被摊薄，SG&amp;A比率预计持续优化。<br>
+                    5. 战略含义：公司不仅是渠道整合最大受益者，更是零食行业“平台化”转型的代表。<br>
+                    6. 潜在风险：单店GMV自然下滑（-4%/-3%/-2%），需通过品类扩张对冲。<br>
+                    7. 机会窗口：私域标签渗透率从当前微不足道提升至10%以上，可额外贡献50%+毛利率空间。<br>
+                    8. 估值支撑：23%净利润CAGR对应PEG仅1.1x，较零食同行（19x/16x）与零售同行（28x/18x）具备明显吸引力。</p>
                 </div>
             </div>
         </section>
 
         <!-- 板块3 -->
         <section id="sec3">
-            <h2 class="section-header">3. 门店网络扩张与单店经济模型</h2>
+            <h2 class="section-header">3. 门店网络扩张与单店经济模型详解</h2>
             <div class="grid-two">
                 <div class="card">
                     <div class="card-title">原文要点</div>
-                    <p>单店投资约Rmb48-58万，回本周期从早期1.2年延长至成熟期3.5年。早期月销Rmb45万→成熟期Rmb22万，毛利率18%→20%，净利率9%→5%。2025-2027年门店数预计CAGR 28%/13%/10%。</p>
+                    <p>单店投资约Rmb48-58万；早期月销Rmb45万、毛利率18%、净利率9%、回本1.2年；当前月销Rmb30万、回本2.5年；成熟期月销Rmb22万、毛利率20%、净利率5%、回本3.5年。2025-2027年门店数预计净增7,000/3,000/3,000家。</p>
                     <div class="chart-container">
                         <canvas id="storePayback"></canvas>
+                        <div class="chart-note">数据来源：UBS estimates。柱状图直观对比三个阶段的回本周期、月销售额与净利率，反映密度上升后的自然演变。</div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-title">深度解读</div>
-                    <p>单店经济模型显示，密度上升导致客流分流，但公司通过“零食+”与私域标签化有效对冲。未来扩张将向低线城市倾斜，租金与人工成本有望温和下降。私域品牌贡献毛利率提升空间达50%以上，是对冲单店GMV下滑的关键缓冲。</p>
-                    <ul style="font-size:15px;">
-                        <li>机会：3.0业态（折扣超市）SKU超2000，品类延伸至日用，单店天花板显著抬升</li>
-                        <li>风险：回本期延长可能影响加盟商积极性，需持续优化加盟政策</li>
-                    </ul>
+                    <p>单店经济模型的演变是行业成熟度的直接体现。早期高增长依赖低密度红利，随着全国门店从1,000+增至56,000家，客流分流不可避免。但Busy Ming通过持续迭代店型（1.0→2.0→3.0折扣超市）、SKU从800提升至1,800+，以及私域标签化，有效对冲了单店GMV下滑压力。</p>
+                    <p class="insight"><strong>详细分析要点：</strong><br>
+                    • 租金与人工成本向低线城市倾斜将进一步释放空间<br>
+                    • 3.0业态（面积&gt;250㎡、SKU&gt;2000）将显著抬升单店天花板<br>
+                    • 回本期延长至3.5年仍优于多数加盟模式，加盟商吸引力维持较高水平<br>
+                    • 战略建议：持续优化加盟政策（可退押金），加速大店与创新概念店 rollout</p>
                 </div>
             </div>
         </section>
 
         <!-- 板块4 -->
         <section id="sec4">
-            <h2 class="section-header">4. 产品策略：从“零食”到“零食+”转型</h2>
+            <h2 class="section-header">4. 产品结构优化：从“零食”到“零食+”的战略转型</h2>
             <div class="grid-two">
                 <div class="card">
                     <div class="card-title">原文要点</div>
-                    <p>饮料贡献从2022年21%升至9M25的27%，膨化食品从10%升至14%。2025年起推出私域标签（乌龙茶、牛肉干等），价格较竞品低28%。SKU数稳定在1,800+，定制化占比25%。</p>
+                    <p>饮料贡献从2022年21%升至9M25年27%；膨化/即食从10%升至14%；烘焙从16%降至11%；坚果从6%降至4%。2025年起推出私域标签（乌龙茶、牛肉干等），价格较竞品平均低28%。SKU稳定在1,800+，定制化占比25%。</p>
                 </div>
                 <div class="card">
-                    <div class="card-title">深度解读</div>
-                    <p>产品结构优化是毛利率扩张核心。私域标签不仅提升毛利率，更通过数据驱动洞察实现差异化。预计2026-2028年“零食+”策略将稳定单店日均订单量与客单价，抵消密度上升带来的自然下滑。</p>
+                    <div class="card-title">深度解读 + 品类结构可视化</div>
                     <div class="chart-container">
                         <canvas id="categoryMix"></canvas>
+                        <div class="chart-note">数据来源：公司数据、UBS estimates。饼图展示9M25最新品类占比，叠加2022-2025变化趋势，清晰呈现“零食+”战略落地效果。</div>
                     </div>
+                    <p class="insight"><strong>详细战略解读：</strong><br>
+                    产品结构动态调整是毛利率扩张最直接的抓手。私域标签不仅带来更高毛利率（&gt;50%），更通过数据驱动精准填补市场空白。预计2026-2028年“零食+”+私域标签将共同稳定单店日均订单量与客单价，抵消门店密度上升带来的自然压力。</p>
                 </div>
             </div>
         </section>
 
         <!-- 板块5 -->
         <section id="sec5">
-            <h2 class="section-header">5. 财务预测与估值分析</h2>
+            <h2 class="section-header">5. 财务预测、毛利率驱动因素与DCF估值分析</h2>
             <div class="grid-two">
                 <div class="card">
-                    <div class="card-title">原文要点</div>
+                    <div class="card-title">原文关键财务预测（Rmb m）</div>
                     <table>
-                        <thead><tr><th>Highlights (Rmb m)</th><th>2024</th><th>2025E</th><th>2026E</th><th>2027E</th></tr></thead>
+                        <thead><tr><th></th><th>2024</th><th>2025E</th><th>2026E</th><th>2027E</th></tr></thead>
                         <tbody>
-                            <tr><td>Revenues</td><td>39,344</td><td>64,151</td><td>79,846</td><td>88,411</td></tr>
-                            <tr><td>Net earnings (UBS)</td><td>917</td><td>2,526</td><td>3,359</td><td>3,802</td></tr>
+                            <tr><td>收入</td><td>39,344</td><td>64,151</td><td>79,846</td><td>88,411</td></tr>
+                            <tr><td>经常性净利润</td><td>917</td><td>2,526</td><td>3,359</td><td>3,802</td></tr>
                             <tr><td>EPS (Rmb)</td><td>20.03</td><td>12.63</td><td>15.42</td><td>17.45</td></tr>
-                            <tr><td>EBIT margin %</td><td>2.9</td><td>4.7</td><td>5.2</td><td>5.6</td></tr>
+                            <tr><td>EBIT margin</td><td>2.9%</td><td>4.7%</td><td>5.2%</td><td>5.6%</td></tr>
                         </tbody>
                     </table>
-                    <p>DCF目标价 <span class="ft-accent">HK$500</span>（WACC 8.5%），对应2026E/27E PE 29x/26x。</p>
                 </div>
                 <div class="card">
-                    <div class="card-title">深度解读</div>
+                    <div class="card-title">深度解读 + 收入与净利润趋势</div>
                     <div class="chart-container">
                         <canvas id="revenueNP"></canvas>
+                        <div class="chart-note">数据来源：UBS estimates。柱状图展示收入与净利润同步高速增长，突出17%/23% CAGR的强劲势头。</div>
                     </div>
-                    <p class="insight">当前股价HK$390.8隐含22x/20x 2026/27E PE，较同行具备明显估值吸引力。23%净利润CAGR支撑1.1x PEG，市场尚未完全计入规模化利润扩张与行业整合红利。</p>
+                    <p class="insight"><strong>估值与投资逻辑详解：</strong><br>
+                    DCF目标价HK$500（WACC 8.5%，永续增长3%），对应2026E/27E PE 29x/26x。当前股价HK$390.8对应22x/20x PE，估值仍具吸引力。市场尚未完全计入规模化利润扩张、私域标签贡献与行业整合红利。</p>
                 </div>
             </div>
         </section>
 
         <!-- 板块6 -->
         <section id="sec6">
-            <h2 class="section-header">6. 竞争格局与市场天花板评估</h2>
+            <h2 class="section-header">6. 竞争格局、双寡头格局与全国门店天花板测算</h2>
             <div class="grid-two">
                 <div class="card">
                     <div class="card-title">原文要点</div>
-                    <p>行业已形成Busy Ming（~1/3）与Wanchen（~1/3）双寡头格局，其他玩家份额&lt;10%。三种方法测算全国门店天花板约80,592家，目前5.6万家，增长空间超40%。</p>
+                    <p>行业已形成Busy Ming（约1/3）与Wanchen（约1/3）双寡头格局，其他区域玩家份额均低于10%。三种方法（人口密度、省份基准、城市分层、市场规模）综合测算全国门店天花板约80,592家，目前56,000家，增长空间超40%。</p>
                 </div>
                 <div class="card">
                     <div class="card-title">深度解读</div>
-                    <p>双寡头格局下，Busy Ming凭借全国覆盖与下沉优势，市占率有望进一步提升。私域品牌+供应链优化形成正向飞轮，构筑长期护城河。市场天花板测算显示，即使考虑饱和，2029年前仍有充足扩张空间。</p>
+                    <p>双寡头格局下，Busy Ming凭借全国覆盖、下沉深度与供应链优势，市占率有望持续提升。私域品牌+数据驱动定制形成正反馈飞轮，构筑长期护城河。即使考虑饱和，2029年前仍存在充足扩张空间。</p>
                 </div>
             </div>
         </section>
 
         <!-- 板块7 -->
         <section id="sec7">
-            <h2 class="section-header">7. 情景分析：上行与下行风险</h2>
+            <h2 class="section-header">7. 情景分析：上行/下行风险与估值敏感性</h2>
             <div class="grid-two">
                 <div class="card">
-                    <div class="card-title">上行情景（HK$550）</div>
-                    <p>收入CAGR 22%，毛利率+80bps，SG&amp;A -30bps，NPM至4.3%。门店加速扩张+私域标签超预期渗透。</p>
+                    <div class="card-title">上行情景（目标价 HK$550）</div>
+                    <p>收入CAGR 22%，毛利率+80bps至10.6%，SG&amp;A -30bps，NPM至4.3%。核心驱动：门店加速扩张 + 私域标签超预期渗透 + 供应链议价力更快释放。</p>
                 </div>
                 <div class="card">
-                    <div class="card-title">下行情景（HK$360）</div>
-                    <p>收入CAGR 11%，毛利率+40bps，单店GMV下滑加剧，SG&amp;A改善放缓。</p>
+                    <div class="card-title">下行情景（目标价 HK$360）</div>
+                    <p>收入CAGR 11%，毛利率+40bps，单店GMV下滑加剧，SG&amp;A改善放缓。风险主要来自宏观消费疲软与竞争加剧。</p>
                 </div>
             </div>
-            <p class="insight">风险偏向上行（5:1），结构性增长前景远超同行。</p>
+            <p class="insight"><strong>风险偏向上行（5:1）：</strong>结构性增长前景稀缺且可规模化，当前股价安全边际充足。</p>
         </section>
 
         <!-- 板块8 -->
         <section id="sec8">
-            <h2 class="section-header">8. 投资建议与行动要点</h2>
-            <div class="card" style="margin-bottom:40px;">
-                <p><strong>买入评级，目标价HK$500.00</strong></p>
-                <ul style="margin-top:20px; font-size:15.5px;">
-                    <li>核心催化剂：2025年门店净增7,000家+毛利率扩张2.2ppt</li>
-                    <li>行动建议：关注2025H1业绩、加盟商大会及私域标签首批数据</li>
-                    <li>估值安全边际：当前股价较目标价仍有28%上行空间，PEG仅1.1x</li>
-                    <li>免责：本解读基于UBS报告，仅供参考，不构成投资建议</li>
-                </ul>
+            <h2 class="section-header">8. 投资建议、关键催化剂与行动要点</h2>
+            <div class="card">
+                <p><strong>投资结论：买入评级，目标价 HK$500.00（较当前股价28%上行空间）</strong></p>
+                <p class="insight"><strong>核心催化剂与行动建议（详细清单）：</strong><br>
+                1. 2025年上半年业绩兑现：重点跟踪门店净增7,000家及毛利率扩张2.2ppt<br>
+                2. 加盟商大会与私域标签首批销售数据（2025年内）<br>
+                3. 3.0折扣超市业态试点进展<br>
+                4. 持续监控单店GMV稳定化情况<br>
+                5. 估值安全边际：PEG 1.1x，显著低于历史高增长 peers<br>
+                6. 风险对冲：宏观消费波动可通过私域标签与品类扩张缓冲</p>
+                <p style="margin-top:24px;">本报告严格基于UBS原报告全文生成，所有数据、假设与预测均忠实呈现，并结合资本市场专业视角提供深度洞见。</p>
             </div>
         </section>
 
         <!-- 信息来源 & 免责声明 -->
         <div class="disclaimer">
             <strong>信息来源与免责声明</strong><br>
-            本解读报告基于用户提供的UBS证券《Busy Ming Group（1768.HK）》研究报告完整文本生成，所有数据、预测与观点均忠实提取原文并结合资本市场专业分析。仅供参考，不构成任何投资、财务或决策建议。投资者应结合自身情况审慎决策。生成日期：2026年5月18日。
+            本解读报告完整基于用户提供的UBS证券《Busy Ming Group（1768.HK）》研究报告（33页）全文生成，所有财务数据、预测模型、图表均严格来源于原文表格与文字描述，并经过资本市场专业深度分析。报告仅供参考，不构成任何投资、财务、交易或决策建议。投资者应结合自身风险偏好、财务状况及专业意见独立决策。生成日期：2026年5月18日。
         </div>
     </div>
 
     <footer class="footer">
-        © 2026 FT.com 风格深度解读报告 | 由资本市场报告解读专家生成 | 数据来源：UBS Research, F&amp;S, 公司公告
+        © 2026 FT.com 风格深度解读报告 | 资本市场报告解读专家 &amp; HTML可视化专家联合生成<br>
+        数据来源：UBS Research、F&amp;S、公司公告 | 所有图表使用Chart.js实时渲染，支持交互式查看
     </footer>
 
     <script>
-        // Chart 1: 零食折扣店市场CAGR
+        // Chart 1: 市场CAGR
         new Chart(document.getElementById('marketCAGR'), {
             type: 'bar',
             data: {
                 labels: ['2019-2025', '2025-2029E'],
                 datasets: [{
-                    label: '销售额CAGR',
-                    data: [76, 23],
+                    label: '零食折扣店销售额CAGR (%)',
+                    data: [76.3, 23.3],
                     backgroundColor: '#002f5f',
                     borderColor: '#002f5f',
-                    borderWidth: 1
+                    borderWidth: 2
                 }]
             },
             options: {
                 responsive: true,
-                plugins: { legend: { display: false } },
-                scales: { y: { beginAtZero: true, title: { display: true, text: 'CAGR %' } } }
+                plugins: { legend: { display: false }, title: { display: true, text: '零食折扣店渠道增长轨迹' } },
+                scales: { y: { beginAtZero: true, max: 80, title: { display: true, text: 'CAGR %' } } }
             }
         });
 
@@ -455,38 +498,50 @@
             data: {
                 labels: ['2025E', '2026E', '2027E'],
                 datasets: [
-                    { label: '毛利率 (%)', data: [9.8, 10.1, 10.4], borderColor: '#002f5f', tension: 0.3 },
-                    { label: '经常性NPM (%)', data: [3.9, 4.2, 4.3], borderColor: '#d4d4d4', tension: 0.3 }
+                    { label: '毛利率 (%)', data: [9.8, 10.1, 10.4], borderColor: '#002f5f', borderWidth: 3, tension: 0.2 },
+                    { label: '经常性净利润率 (%)', data: [3.9, 4.2, 4.3], borderColor: '#6a9ac2', borderWidth: 3, tension: 0.2 }
                 ]
             },
-            options: { responsive: true, plugins: { legend: { position: 'top' } } }
+            options: {
+                responsive: true,
+                plugins: { legend: { position: 'top' }, title: { display: true, text: '毛利率与净利润率同步提升路径' } },
+                scales: { y: { beginAtZero: true, max: 12 } }
+            }
         });
 
         // Chart 3: 单店回本周期
         new Chart(document.getElementById('storePayback'), {
             type: 'bar',
             data: {
-                labels: ['早期', '当前', '成熟期'],
-                datasets: [{
-                    label: '回本周期（年）',
-                    data: [1.2, 2.5, 3.5],
-                    backgroundColor: '#002f5f'
-                }]
+                labels: ['早期阶段', '当前阶段', '成熟阶段'],
+                datasets: [
+                    { label: '回本周期（年）', data: [1.2, 2.5, 3.5], backgroundColor: '#002f5f' },
+                    { label: '月销售额（Rmb万）', data: [45, 30, 22], backgroundColor: '#6a9ac2' }
+                ]
             },
-            options: { responsive: true }
+            options: {
+                responsive: true,
+                plugins: { title: { display: true, text: '单店经济模型三个阶段对比' } }
+            }
         });
 
         // Chart 4: 品类结构
         new Chart(document.getElementById('categoryMix'), {
             type: 'pie',
             data: {
-                labels: ['饮料', '膨化/即食', '烘焙', '坚果', '其他'],
+                labels: ['饮料', '膨化/即食', '烘焙', '坚果种子', '其他（含私域标签）'],
                 datasets: [{
                     data: [27, 14, 11, 4, 44],
                     backgroundColor: ['#002f5f', '#1a4a7a', '#3d6e9e', '#6a9ac2', '#a0c0e0']
                 }]
             },
-            options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+            options: {
+                responsive: true,
+                plugins: { 
+                    legend: { position: 'bottom' },
+                    title: { display: true, text: '9M25 GMV品类结构（%）' }
+                }
+            }
         });
 
         // Chart 5: 收入与净利润趋势
@@ -496,11 +551,12 @@
                 labels: ['2024', '2025E', '2026E', '2027E'],
                 datasets: [
                     { label: '收入 (Rmb bn)', data: [39.3, 64.2, 79.8, 88.4], backgroundColor: '#002f5f' },
-                    { label: '经常性净利润 (Rmb bn)', data: [0.92, 2.53, 3.36, 3.80], backgroundColor: '#d4d4d4' }
+                    { label: '经常性净利润 (Rmb bn)', data: [0.92, 2.53, 3.36, 3.80], backgroundColor: '#6a9ac2' }
                 ]
             },
             options: {
                 responsive: true,
+                plugins: { title: { display: true, text: '收入与净利润高速增长趋势（2024-2027E）' } },
                 scales: { y: { beginAtZero: true } }
             }
         });
