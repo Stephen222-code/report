@@ -9,6 +9,14 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap');
         body { font-family: 'Inter', 'Noto Sans SC', system-ui, sans-serif; }
         .section-header { font-size: 1.35rem; font-weight: 700; color: #0f172a; border-left: 5px solid #0ea5e9; padding-left: 14px; }
+        @media (max-width: 640px) {
+            .section-header { font-size: 1.1rem; padding-left: 10px; border-left-width: 4px; }
+            .news-item { padding: 14px !important; }
+            table { font-size: 0.75rem; }
+            .ipo-table th, .ipo-table td { padding: 6px 8px !important; }
+            .max-w-screen-2xl { padding-left: 0.75rem; padding-right: 0.75rem; }
+            .dense-text { font-size: 0.875rem; line-height: 1.5; }
+        }
         .news-item { transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1); }
         .news-item:hover { transform: translateY(-1px); box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.08); }
         .metric-green { color: #16a34a; font-weight: 600; }
@@ -17,46 +25,79 @@
         .source { font-size: 0.75rem; background: #e0f2fe; color: #0369a1; padding: 2px 9px; border-radius: 9999px; font-weight: 500; }
         table { font-size: 0.875rem; }
         .dense-text { line-height: 1.55; }
-        .ipo-table th, .ipo-table td { padding: 6px 8px; text-align: left; border-bottom: 1px solid #e2e8f0; }
-        .ipo-table th { background: #f8fafc; font-weight: 600; color: #475569; }
+        .ipo-table th, .ipo-table td { 
+            padding: 10px 12px; 
+            text-align: left; 
+            border-bottom: 1px solid #e2e8f0; 
+            vertical-align: top;
+            line-height: 1.5;
+        }
+        .ipo-table th { 
+            background: #f8fafc; 
+            font-weight: 600; 
+            color: #475569; 
+            white-space: nowrap;
+        }
+        .ipo-table td { 
+            white-space: normal; 
+            word-break: break-word;
+        }
+        .ipo-table tbody tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        .ipo-table tbody tr:hover {
+            background-color: #f1f5f9;
+        }
+        .trend-box { background: #f8fafc; border-left: 4px solid #64748b; }
+
+        /* 手机端额外优化 */
+        @media (max-width: 640px) {
+            .overflow-x-auto {
+                -webkit-overflow-scrolling: touch;
+                scroll-behavior: smooth;
+            }
+            .news-item {
+                border-radius: 12px;
+            }
+        }
     </style>
 </head>
 <body class="bg-slate-100">
     <div class="max-w-screen-2xl mx-auto">
         <!-- Header -->
         <div class="bg-slate-900 text-white sticky top-0 z-50 shadow">
-            <div class="px-8 py-5">
-                <div class="flex justify-between items-end">
+            <div class="px-4 sm:px-6 md:px-8 py-4 sm:py-5">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-2 sm:gap-0">
                     <div>
-                        <h1 class="text-3xl font-semibold tracking-tighter">2026年5月31日 市场与行业投资简报</h1>
-                        <p class="text-slate-400 mt-1">过去24小时 · 最完整版</p>
+                        <h1 class="text-2xl sm:text-3xl font-semibold tracking-tighter">2026年5月31日 市场与行业投资简报</h1>
+                        <p class="text-slate-400 mt-0.5 sm:mt-1 text-sm sm:text-base">过去24小时 · 一级市场视角 · 最完整版</p>
                     </div>
-                    <div class="text-right text-sm">
-                        <div class="text-emerald-400 font-medium">更新于 2026-05-31 07:00</div>
-                        <div class="text-slate-500 text-xs mt-0.5">来源：用户提供市场快照 | AI固定网站更新清洗版 | 上交所/港交所官方数据</div>
+                    <div class="text-left sm:text-right text-xs sm:text-sm">
+                        <div class="text-emerald-400 font-medium">更新于 2026-05-31</div>
+                        <div class="text-slate-500 text-[10px] sm:text-xs mt-0.5 leading-tight">来源：用户提供市场快照 | 交表和上市_IPO数据清洗_2026-05-31.md | industry_news_20260531.md</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="px-8 py-8 space-y-10">
+        <div class="px-4 sm:px-6 md:px-8 py-6 sm:py-8 space-y-8 sm:space-y-10">
 
             <!-- 全球市场快照 -->
             <div>
                 <div class="flex items-baseline justify-between mb-3">
                     <h2 class="section-header">全球市场快照</h2>
-                    <span class="text-xs px-3 py-1 bg-white border rounded-full text-slate-500">数据截至 2026.5.31</span>
+                    <span class="text-xs px-3 py-1 bg-white border rounded-full text-slate-500">数据截至 2026.5.31（部分周末休市）</span>
                 </div>
 
                 <div class="bg-white rounded-2xl shadow border overflow-hidden">
-                    <div class="overflow-x-auto">
-                        <table class="w-full">
+                    <div class="overflow-x-auto -mx-1 px-1">
+                        <table class="w-full min-w-[720px] sm:min-w-full">
                             <thead class="bg-slate-50">
                                 <tr>
                                     <th class="px-4 py-3 text-left font-semibold text-slate-600">类别</th>
-                                    <th class="px-4 py-3 text-left font-semibold text-slate-600">指数</th>
+                                    <th class="px-4 py-3 text-left font-semibold text-slate-600">指数/资产</th>
                                     <th class="px-4 py-3 text-right font-semibold text-slate-600">最新收盘</th>
-                                    <th class="px-4 py-3 text-right font-semibold text-slate-600">日涨跌</th>
+                                    <th class="px-4 py-3 text-right font-semibold text-slate-600">日涨跌 (点/%)</th>
                                     <th class="px-4 py-3 text-right font-semibold text-slate-600">1周</th>
                                     <th class="px-4 py-3 text-right font-semibold text-slate-600">1月</th>
                                     <th class="px-4 py-3 text-right font-semibold text-slate-600">3月</th>
@@ -65,175 +106,230 @@
                                 </tr>
                             </thead>
                             <tbody class="divide-y text-sm">
-                                <tr class="hover:bg-slate-50"><td class="px-4 py-2.5 font-medium text-slate-500">美股</td><td class="px-4 py-2.5 font-semibold">标普500 (S&P 500)</td><td class="px-4 py-2.5 text-right font-mono">7,580.06</td><td class="px-4 py-2.5 text-right metric-green">+0.22%</td><td class="px-4 py-2.5 text-right metric-green">+1.45%</td><td class="px-4 py-2.5 text-right metric-green">+6.25%</td><td class="px-4 py-2.5 text-right metric-green">+10.22%</td><td class="px-4 py-2.5 text-right metric-green">+10.70%</td><td class="px-4 py-2.5 text-right metric-green font-semibold">+28.24%</td></tr>
-                                <tr class="hover:bg-slate-50"><td class="px-4 py-2.5 font-medium text-slate-500"></td><td class="px-4 py-2.5 font-semibold">纳斯达克100</td><td class="px-4 py-2.5 text-right font-mono">30,333.18</td><td class="px-4 py-2.5 text-right metric-green">+0.36%</td><td class="px-4 py-2.5 text-right metric-green">+2.89%</td><td class="px-4 py-2.5 text-right metric-green">+11.57%</td><td class="px-4 py-2.5 text-right metric-green">+21.53%</td><td class="px-4 py-2.5 text-right metric-green">+19.26%</td><td class="px-4 py-2.5 text-right metric-green font-semibold">+41.98%</td></tr>
-                                <tr class="hover:bg-slate-50"><td class="px-4 py-2.5 font-medium text-slate-500"></td><td class="px-4 py-2.5 font-semibold">道琼斯 (DJIA)</td><td class="px-4 py-2.5 text-right font-mono">51,032.46</td><td class="px-4 py-2.5 text-right metric-green">+0.72%</td><td class="px-4 py-2.5 text-right">+0.18%~1.5%</td><td class="px-4 py-2.5 text-right metric-green">+3.70%</td><td class="px-4 py-2.5 text-right">+3.45%</td><td class="px-4 py-2.5 text-right metric-green">+6.19%</td><td class="px-4 py-2.5 text-right metric-green">+20.02%</td></tr>
-                                <tr class="hover:bg-slate-50 bg-slate-50/60"><td class="px-4 py-2.5 font-medium text-slate-500">欧洲</td><td class="px-4 py-2.5 font-semibold">欧洲斯托克50</td><td class="px-4 py-2.5 text-right font-mono">6,050.54</td><td class="px-4 py-2.5 text-right metric-red">-0.08%</td><td class="px-4 py-2.5 text-right metric-green">+1.57%</td><td class="px-4 py-2.5 text-right metric-green">+3.73%</td><td class="px-4 py-2.5 text-right metric-red">-1.37%</td><td class="px-4 py-2.5 text-right metric-green">+6.81%</td><td class="px-4 py-2.5 text-right metric-green">+12.56%</td></tr>
-                                <tr class="hover:bg-slate-50 bg-slate-50/60"><td class="px-4 py-2.5 font-medium text-slate-500"></td><td class="px-4 py-2.5 font-semibold">斯托克欧洲600</td><td class="px-4 py-2.5 text-right font-mono">626.00</td><td class="px-4 py-2.5 text-right metric-green">+0.14%</td><td class="px-4 py-2.5 text-right">+0.88%</td><td class="px-4 py-2.5 text-right">+3.82%</td><td class="px-4 py-2.5 text-right">~ -1.3%</td><td class="px-4 py-2.5 text-right">~ +7%</td><td class="px-4 py-2.5 text-right">~ +14%</td></tr>
-                                <tr class="hover:bg-slate-50 bg-slate-50/60"><td class="px-4 py-2.5 font-medium text-slate-500"></td><td class="px-4 py-2.5 font-semibold">英国富时100</td><td class="px-4 py-2.5 text-right font-mono">10,409.28</td><td class="px-4 py-2.5 text-right metric-red">-0.16%</td><td class="px-4 py-2.5 text-right metric-red">-0.33%</td><td class="px-4 py-2.5 text-right">+1.92%</td><td class="px-4 py-2.5 text-right">~ -3.9%</td><td class="px-4 py-2.5 text-right">+7.09%</td><td class="px-4 py-2.5 text-right">+19.42%</td></tr>
-                                <tr class="hover:bg-slate-50 bg-slate-50/60"><td class="px-4 py-2.5 font-medium text-slate-500"></td><td class="px-4 py-2.5 font-semibold">德国DAX 40</td><td class="px-4 py-2.5 text-right font-mono">25,104.70</td><td class="px-4 py-2.5 text-right metric-green">+0.05%</td><td class="px-4 py-2.5 text-right metric-green">+0.87%</td><td class="px-4 py-2.5 text-right metric-green">+4.80%</td><td class="px-4 py-2.5 text-right">~ +5%</td><td class="px-4 py-2.5 text-right metric-green">+5.32%</td><td class="px-4 py-2.5 text-right">~ +5%</td></tr>
-                                <tr class="hover:bg-slate-50 bg-slate-50/60"><td class="px-4 py-2.5 font-medium text-slate-500"></td><td class="px-4 py-2.5 font-semibold">法国CAC 40</td><td class="px-4 py-2.5 text-right font-mono">8,183.34</td><td class="px-4 py-2.5 text-right metric-red">-0.07%</td><td class="px-4 py-2.5 text-right metric-green">+1.21%</td><td class="px-4 py-2.5 text-right">+1.75%</td><td class="px-4 py-2.5 text-right metric-red">-4.63%</td><td class="px-4 py-2.5 text-right">~ +1.9%</td><td class="px-4 py-2.5 text-right">+5.57%</td></tr>
-                                <tr class="hover:bg-slate-50"><td class="px-4 py-2.5 font-medium text-slate-500">日本</td><td class="px-4 py-2.5 font-semibold">日经225</td><td class="px-4 py-2.5 text-right font-mono">66,329.50</td><td class="px-4 py-2.5 text-right metric-green">+2.53%</td><td class="px-4 py-2.5 text-right metric-green">+4.72%</td><td class="px-4 py-2.5 text-right metric-green">+12.12%</td><td class="px-4 py-2.5 text-right metric-green">+12.71%</td><td class="px-4 py-2.5 text-right metric-green">+31.99%</td><td class="px-4 py-2.5 text-right metric-green font-semibold">+72.59%</td></tr>
-                                <tr class="hover:bg-slate-50 bg-slate-50/60"><td class="px-4 py-2.5 font-medium text-slate-500">中国</td><td class="px-4 py-2.5 font-semibold">上证综指</td><td class="px-4 py-2.5 text-right font-mono">4,068.57</td><td class="px-4 py-2.5 text-right metric-red">-0.73%</td><td class="px-4 py-2.5 text-right">~ -1%</td><td class="px-4 py-2.5 text-right">~ -1%</td><td class="px-4 py-2.5 text-right">~ 低</td><td class="px-4 py-2.5 text-right">~ 中性</td><td class="px-4 py-2.5 text-right metric-green">+21.5%</td></tr>
-                                <tr class="hover:bg-slate-50 bg-slate-50/60"><td class="px-4 py-2.5 font-medium text-slate-500"></td><td class="px-4 py-2.5 font-semibold">恒生指数</td><td class="px-4 py-2.5 text-right font-mono">25,182.39</td><td class="px-4 py-2.5 text-right metric-green">+0.70%</td><td class="px-4 py-2.5 text-right metric-red">-0.80%~-1.65%</td><td class="px-4 py-2.5 text-right metric-red">-2.30%</td><td class="px-4 py-2.5 text-right metric-red">-5.44%</td><td class="px-4 py-2.5 text-right">~ -3%</td><td class="px-4 py-2.5 text-right metric-green">+8.13%</td></tr>
-                                <tr class="hover:bg-slate-50"><td class="px-4 py-2.5 font-medium text-slate-500">商品/加密</td><td class="px-4 py-2.5 font-semibold">黄金 (Gold, USD/oz)</td><td class="px-4 py-2.5 text-right font-mono">~4,540-4,555</td><td class="px-4 py-2.5 text-right metric-green">+~1%</td><td class="px-4 py-2.5 text-right">~ +0.4-1%</td><td class="px-4 py-2.5 text-right metric-red">~ -2.5%</td><td class="px-4 py-2.5 text-right metric-red">~ -16%</td><td class="px-4 py-2.5 text-right metric-green">~ +6%</td><td class="px-4 py-2.5 text-right metric-green">~ +37%</td></tr>
+                                <tr class="hover:bg-slate-50"><td class="px-4 py-2.5 font-medium text-slate-500">美股</td><td class="px-4 py-2.5 font-semibold">标普500 (S&amp;P 500)</td><td class="px-4 py-2.5 text-right font-mono">7,580.06</td><td class="px-4 py-2.5 text-right metric-green">+16.43 (+0.22%)</td><td class="px-4 py-2.5 text-right metric-green">+1.49%</td><td class="px-4 py-2.5 text-right metric-green">+6.29%</td><td class="px-4 py-2.5 text-right metric-green">+10.19%</td><td class="px-4 py-2.5 text-right metric-green">+11.10%</td><td class="px-4 py-2.5 text-right metric-green font-semibold">+28.22%</td></tr>
+                                <tr class="hover:bg-slate-50"><td class="px-4 py-2.5 font-medium text-slate-500"></td><td class="px-4 py-2.5 font-semibold">纳斯达克100 (Nasdaq 100)</td><td class="px-4 py-2.5 text-right font-mono">~26,973</td><td class="px-4 py-2.5 text-right metric-green">+0.20%</td><td class="px-4 py-2.5 text-right">~+2.0%</td><td class="px-4 py-2.5 text-right">~+8%</td><td class="px-4 py-2.5 text-right">~+12%</td><td class="px-4 py-2.5 text-right">~+15%</td><td class="px-4 py-2.5 text-right">~+35%</td></tr>
+                                <tr class="hover:bg-slate-50"><td class="px-4 py-2.5 font-medium text-slate-500"></td><td class="px-4 py-2.5 font-semibold">道琼斯 (DJIA)</td><td class="px-4 py-2.5 text-right font-mono">51,032.46</td><td class="px-4 py-2.5 text-right metric-green">+363.49 (+0.72%)</td><td class="px-4 py-2.5 text-right metric-green">+0.90%</td><td class="px-4 py-2.5 text-right metric-green">+2.78%</td><td class="px-4 py-2.5 text-right metric-green">+4.19%</td><td class="px-4 py-2.5 text-right">~+8%</td><td class="px-4 py-2.5 text-right metric-green">+20.73%</td></tr>
+                                <tr class="hover:bg-slate-50 bg-slate-50/60"><td class="px-4 py-2.5 font-medium text-slate-500">欧洲</td><td class="px-4 py-2.5 font-semibold">欧洲斯托克50 (EURO STOXX 50)</td><td class="px-4 py-2.5 text-right font-mono">~6,070</td><td class="px-4 py-2.5 text-right metric-green">+0.25%</td><td class="px-4 py-2.5 text-right metric-green">+1.57%</td><td class="px-4 py-2.5 text-right metric-green">+3.73%</td><td class="px-4 py-2.5 text-right metric-red">-1.37%</td><td class="px-4 py-2.5 text-right metric-green">+6.81%</td><td class="px-4 py-2.5 text-right metric-green">+12.56%</td></tr>
+                                <tr class="hover:bg-slate-50 bg-slate-50/60"><td class="px-4 py-2.5 font-medium text-slate-500"></td><td class="px-4 py-2.5 font-semibold">斯托克欧洲600 (STOXX Europe 600)</td><td class="px-4 py-2.5 text-right font-mono">~627</td><td class="px-4 py-2.5 text-right metric-green">+0.39%</td><td class="px-4 py-2.5 text-right metric-green">+0.43%</td><td class="px-4 py-2.5 text-right">~+3.2%</td><td class="px-4 py-2.5 text-right">~0%</td><td class="px-4 py-2.5 text-right">~+9.8%</td><td class="px-4 py-2.5 text-right metric-green">+14.59%</td></tr>
+                                <tr class="hover:bg-slate-50 bg-slate-50/60"><td class="px-4 py-2.5 font-medium text-slate-500"></td><td class="px-4 py-2.5 font-semibold">英国富时100 (FTSE 100)</td><td class="px-4 py-2.5 text-right font-mono">10,409.28</td><td class="px-4 py-2.5 text-right metric-red">-16.68 (-0.16%)</td><td class="px-4 py-2.5 text-right metric-green">+1.31%</td><td class="px-4 py-2.5 text-right metric-green">+0.84%</td><td class="px-4 py-2.5 text-right metric-red">-3.51%</td><td class="px-4 py-2.5 text-right">~+6%</td><td class="px-4 py-2.5 text-right metric-green">+20.05%</td></tr>
+                                <tr class="hover:bg-slate-50 bg-slate-50/60"><td class="px-4 py-2.5 font-medium text-slate-500"></td><td class="px-4 py-2.5 font-semibold">德国DAX 40 (DAX)</td><td class="px-4 py-2.5 text-right font-mono">25,104.70</td><td class="px-4 py-2.5 text-right metric-green">+12.45 (+0.05%)</td><td class="px-4 py-2.5 text-right metric-green">+1.36%</td><td class="px-4 py-2.5 text-right metric-green">+4.29%</td><td class="px-4 py-2.5 text-right">~+2%</td><td class="px-4 py-2.5 text-right metric-green">+5.50%</td><td class="px-4 py-2.5 text-right metric-green">+3.50%</td></tr>
+                                <tr class="hover:bg-slate-50 bg-slate-50/60"><td class="px-4 py-2.5 font-medium text-slate-500"></td><td class="px-4 py-2.5 font-semibold">法国CAC 40 (CAC 40)</td><td class="px-4 py-2.5 text-right font-mono">8,183.34</td><td class="px-4 py-2.5 text-right metric-red">-5.53 (-0.07%)</td><td class="px-4 py-2.5 text-right metric-green">+0.83%</td><td class="px-4 py-2.5 text-right metric-green">+1.38%</td><td class="px-4 py-2.5 text-right">~+1%</td><td class="px-4 py-2.5 text-right">~+6%</td><td class="px-4 py-2.5 text-right metric-green">+5.57%</td></tr>
+                                <tr class="hover:bg-slate-50"><td class="px-4 py-2.5 font-medium text-slate-500">日本</td><td class="px-4 py-2.5 font-semibold">日经225 (Nikkei 225)</td><td class="px-4 py-2.5 text-right font-mono">66,329.50</td><td class="px-4 py-2.5 text-right metric-green">+1,636.38 (+2.53%)</td><td class="px-4 py-2.5 text-right metric-green">+4.72%</td><td class="px-4 py-2.5 text-right metric-green">+12.12%</td><td class="px-4 py-2.5 text-right metric-green">+12.71%</td><td class="px-4 py-2.5 text-right metric-green">+31.99%</td><td class="px-4 py-2.5 text-right metric-green font-semibold">+72.59%</td></tr>
+                                <tr class="hover:bg-slate-50 bg-slate-50/60"><td class="px-4 py-2.5 font-medium text-slate-500"></td><td class="px-4 py-2.5 font-semibold">东证指数 (TOPIX)</td><td class="px-4 py-2.5 text-right font-mono">3,957.17</td><td class="px-4 py-2.5 text-right metric-green">+55.16 (+1.41%)</td><td class="px-4 py-2.5 text-right">~+4%</td><td class="px-4 py-2.5 text-right">~+10%</td><td class="px-4 py-2.5 text-right">~+12%</td><td class="px-4 py-2.5 text-right">~+25%</td><td class="px-4 py-2.5 text-right">~+50%</td></tr>
+                                <tr class="hover:bg-slate-50"><td class="px-4 py-2.5 font-medium text-slate-500">中国</td><td class="px-4 py-2.5 font-semibold">上证综指 (SSE Composite)</td><td class="px-4 py-2.5 text-right font-mono">4,068.57</td><td class="px-4 py-2.5 text-right metric-red">-30.07 (-0.73%)</td><td class="px-4 py-2.5 text-right">~-1.1%</td><td class="px-4 py-2.5 text-right">~-1.1%</td><td class="px-4 py-2.5 text-right metric-red">-2.27%</td><td class="px-4 py-2.5 text-right">~+5%</td><td class="px-4 py-2.5 text-right">~+22%</td></tr>
+                                <tr class="hover:bg-slate-50 bg-slate-50/60"><td class="px-4 py-2.5 font-medium text-slate-500"></td><td class="px-4 py-2.5 font-semibold">沪深300 (CSI 300)</td><td class="px-4 py-2.5 text-right font-mono">4,892.12</td><td class="px-4 py-2.5 text-right metric-red">-22.09 (-0.45%)</td><td class="px-4 py-2.5 text-right">~+1%</td><td class="px-4 py-2.5 text-right metric-green">+1.76%</td><td class="px-4 py-2.5 text-right metric-green">+3.85%</td><td class="px-4 py-2.5 text-right metric-green">+8.07%</td><td class="px-4 py-2.5 text-right metric-green">+27.39%</td></tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                <div class="text-[11px] text-slate-500 mt-1.5 px-1">部分数据为区间估算（~）。数据由用户手动提供。</div>
+                <div class="text-[11px] text-slate-500 mt-1.5 px-1">部分数据为区间估算（~）。</div>
             </div>
 
-            <!-- 行业动态 (完全基于 /Users/stephen/Downloads/industry_news_delivery_v2.md 内容生成，原文未改动) -->
+            <!-- IPO / 新上市管道 -->
+            <div>
+                <div class="flex items-baseline justify-between mb-3">
+                    <h2 class="section-header">IPO / 新上市管道</h2>
+                    <span class="text-xs px-3 py-1 bg-white border rounded-full text-slate-500">共 15 家公司（港交所 5 家 + 上交所 10 家）</span>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow border p-6 space-y-8">
+                    <div>
+                        <p class="commentary mb-4">数据来源于港交所（新上市申请 AP &amp; PHIP）及上海证券交易所官方更新（2026-05-29 至 2026-05-31）。港交所 5 家均为第一次呈交申请版本；上交所项目涵盖已受理、已问询、提交注册等不同阶段，涉及科创板与主板。所有字段完整保留。</p>
+                    </div>
+
+                    <!-- 港交所 -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-slate-800 mb-3 flex items-center gap-2">
+                            港交所（5 家）
+                            <span class="text-xs px-2 py-0.5 bg-sky-100 text-sky-700 rounded-full font-medium">申请版本（第一次呈交）</span>
+                        </h3>
+                        <div class="overflow-x-auto -mx-1 px-1">
+                            <table class="ipo-table w-full text-sm border min-w-[520px] sm:min-w-full">
+                                <thead>
+                                    <tr>
+                                        <th>发行人全称</th>
+                                        <th>板块</th>
+                                        <th>审核状态</th>
+                                        <th>更新日期</th>
+                                        <th>受理日期</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td class="font-medium">Megatronix Inc.</td><td>港股</td><td>申请版本（第一次呈交）</td><td>2026-05-29</td><td>2026-05-29</td></tr>
+                                    <tr><td class="font-medium">上海果納半導體技術股份有限公司</td><td>港股</td><td>申请版本（第一次呈交）</td><td>2026-05-29</td><td>2026-05-29</td></tr>
+                                    <tr><td class="font-medium">合肥新匯成微電子股份有限公司</td><td>港股</td><td>申请版本（第一次呈交）</td><td>2026-05-29</td><td>2026-05-29</td></tr>
+                                    <tr><td class="font-medium">地上鐵綠色科技（深圳）股份有限公司</td><td>港股</td><td>申请版本（第一次呈交）</td><td>2026-05-29</td><td>2026-05-29</td></tr>
+                                    <tr><td class="font-medium">江蘇貝爾家居科技股份有限公司</td><td>港股</td><td>申请版本（第一次呈交）</td><td>2026-05-29</td><td>2026-05-29</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 上海证券交易所 -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-slate-800 mb-3 flex items-center gap-2">
+                            上海证券交易所（10 家）
+                            <span class="text-xs px-2 py-0.5 bg-emerald-100 text-emerald-700 rounded-full font-medium">科创板 + 主板</span>
+                        </h3>
+                        <div class="overflow-x-auto border border-slate-200 rounded-xl bg-white -mx-1 px-1">
+                            <table class="ipo-table w-full text-sm border-0 min-w-[720px] sm:min-w-full">
+                                <thead>
+                                    <tr>
+                                        <th>发行人全称</th>
+                                        <th>板块</th>
+                                        <th>审核状态</th>
+                                        <th>注册地</th>
+                                        <th>行业</th>
+                                        <th>保荐机构</th>
+                                        <th>律师事务所</th>
+                                        <th>会计师事务所</th>
+                                        <th>更新日期</th>
+                                        <th>受理日期</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td class="font-medium">广东龙行天下科技股份有限公司</td><td>主板</td><td>已受理</td><td>广东</td><td>皮革、毛皮、羽毛及其制品和制鞋业</td><td>招商证券股份有限公司</td><td>北京国枫律师事务所</td><td>立信会计师事务所（特殊普通合伙）</td><td>2026-05-29</td><td>2026-05-29</td></tr>
+                                    <tr><td class="font-medium">福建马坑矿业股份有限公司</td><td>主板</td><td>提交注册</td><td>福建</td><td>黑色金属矿采选业</td><td>中信证券股份有限公司</td><td>福建至理律师事务所</td><td>华兴会计师事务所（特殊普通合伙）</td><td>2026-05-29</td><td>2025-12-04</td></tr>
+                                    <tr><td class="font-medium">江苏高凯精密流体技术股份有限公司</td><td>科创板</td><td>已问询</td><td>江苏</td><td>专用设备制造业</td><td>国泰海通证券股份有限公司</td><td>北京国枫律师事务所</td><td>容诚会计师事务所（特殊普通合伙）</td><td>2026-05-29</td><td>2025-12-29</td></tr>
+                                    <tr><td class="font-medium">株洲科能新材料股份有限公司</td><td>科创板</td><td>已问询</td><td>湖南</td><td>有色金属冶炼和压延加工业</td><td>申港证券股份有限公司</td><td>湖南启元律师事务所</td><td>信永中和会计师事务所（特殊普通合伙）</td><td>2026-05-28</td><td>2026-05-11</td></tr>
+                                    <tr><td class="font-medium">上海海和药物研究开发股份有限公司</td><td>科创板</td><td>已受理</td><td>上海</td><td>医药制造业</td><td>国金证券股份有限公司</td><td>北京市金杜律师事务所</td><td>毕马威华振会计师事务所（特殊普通合伙）</td><td>2026-05-28</td><td>2026-05-28</td></tr>
+                                    <tr><td class="font-medium">长鑫科技集团股份有限公司</td><td>科创板</td><td>提交注册</td><td>安徽</td><td>计算机、通信和其他电子设备制造业</td><td>中国国际金融股份有限公司、中信建投证券股份有限公司</td><td>上海市锦天城律师事务所</td><td>德勤华永会计师事务所（特殊普通合伙）</td><td>2026-05-27</td><td>2025-12-30</td></tr>
+                                    <tr><td class="font-medium">杭州云深处科技股份有限公司</td><td>科创板</td><td>已问询</td><td>浙江</td><td>通用设备制造业</td><td>中信建投证券股份有限公司</td><td>北京市中伦律师事务所</td><td>天健会计师事务所（特殊普通合伙）</td><td>2026-05-27</td><td>2026-05-18</td></tr>
+                                    <tr><td class="font-medium">成都迈科康生物科技股份有限公司</td><td>科创板</td><td>已受理</td><td>四川</td><td>医药制造业</td><td>中国国际金融股份有限公司</td><td>北京市金杜律师事务所</td><td>天健会计师事务所（特殊普通合伙）</td><td>2026-05-27</td><td>2026-05-27</td></tr>
+                                    <tr><td class="font-medium">天津富士达自行车工业股份有限公司</td><td>主板</td><td>已问询</td><td>天津</td><td>铁路、船舶、航空航天和其他运输设备制造业</td><td>中泰证券股份有限公司</td><td>上海市锦天城律师事务所</td><td>立信会计师事务所（特殊普通合伙）</td><td>2026-05-27</td><td>2025-12-24</td></tr>
+                                    <tr><td class="font-medium">思必驰科技股份有限公司</td><td>科创板</td><td>已受理</td><td>江苏</td><td>软件和信息技术服务业</td><td>东吴证券股份有限公司</td><td>北京市金杜律师事务所</td><td>天健会计师事务所（特殊普通合伙）</td><td>2026-05-25</td><td>2026-05-25</td></tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="text-[11px] text-slate-500 mt-2">数据已按更新日期从新到旧排序，缺失字段已留空处理。来源：交表和上市_IPO数据清洗_2026-05-31.md</div>
+                        <div class="text-[11px] text-slate-400 mt-1">提示：表格较宽，可左右滑动查看完整信息（保荐机构、律所、会计师事务所等列）。</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 行业动态 -->
             <div>
                 <div class="flex items-baseline justify-between mb-3">
                     <h2 class="section-header">行业动态</h2>
-                    <span class="text-xs px-3 py-1 bg-white border rounded-full text-slate-500">数据来源于 industry_news_delivery_v2.md（结构化表格版）</span>
+                    <span class="text-xs px-3 py-1 bg-white border rounded-full text-slate-500">数据来源于 industry_news_20260531.md（完整保留）</span>
                 </div>
 
-                <div class="space-y-8">
+                <div class="space-y-10">
+
                     <!-- 一、人工智能与前沿大模型 -->
                     <div>
-                        <h3 class="text-xl font-semibold text-slate-800 mb-2 pl-1">人工智能与前沿大模型</h3>
-                        <p class="text-sm text-slate-500 mb-4 pl-1 leading-relaxed">核心大模型资产的资本化路径正迎来关键的分化期。海外基础大模型阵营的军备竞赛未见减速，独角兽阵营的估值排位战再度洗牌，底层算力的强劲消耗正倒逼整个生态体系的演进。国内方面，随着一二级市场估值体系的重塑，头部厂商开始率先开启实质性的 IPO 进程，成为行业退出的标杆风向标。同时，大模型落地正加速从“模型训练”向“代理式推理（Agentic AI）”演进，云厂与基础数据库厂商正全面围绕 Agent 原生架构进行产品重构。</p>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2 pl-1">一、人工智能与前沿大模型</h3>
+                        <div class="trend-box p-4 rounded-xl mb-4 text-sm text-slate-700">
+                            大模型行业的竞争正在从单纯的“参数军备竞赛”全面转向“极致的推理成本优化”与“全链路工程重构”。小米公开其 MiMo 大模型推理栈的全链路技术方案，通过混合架构优化将 KV-Cache 压缩至同级的七分之一，直接拉低了长文本场景的算力门槛。这表明端侧与云侧大模型的永久性大幅降价背后，有着扎实的工程技术演进支撑，而非单纯的行业价格战。与此同时，财跃星辰 AI 小财神的重大更新，标志着投资类应用正在将零散的官方模型收敛为更强大的“单一主 Agent (CLI 形态)”，实现智能上下文感知与深度研究报告的一键输出，推动 AI 真正进入企业及高净值用户的生产系统。此外，OpenAI 的 IPO 承销商博弈以及软银在欧洲的大体量 AI 基建投资，预示着全球大模型算力与资本的绑定正迈向史无前例的体量。
+                        </div>
                         <div class="space-y-4">
                             <div class="news-item bg-white border rounded-2xl p-5">
                                 <div class="flex justify-between items-start mb-1">
-                                    <div class="font-semibold text-base">Anthropic完成650亿融资，估值9650亿首次反超OpenAI</div>
+                                    <div class="font-semibold text-base">小米MiMo首次公开模型推理系统全链路优化技术细节</div>
+                                    <span class="source">华尔街见闻, 36氪</span>
+                                </div>
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
+                                    <span class="px-2 py-0.5 bg-sky-100 text-sky-700 rounded-full font-medium">AI/大模型</span>
+                                    <span class="text-slate-500">涉及：小米大模型团队</span>
+                                    <span class="font-semibold text-emerald-700">KV-Cache 存储压缩至约 1/7</span>
+                                </div>
+                                <div class="dense-text text-sm text-slate-600">小米正式公开 MiMo-V2.5 系列模型推理系统全链路优化方案。团队围绕 Hybrid SWA+MoE+多模态架构，重构了从缓存管理、分级前缀缓存到调度策略与 Prefill/Decode 的完整推理栈，大幅降低长序列场景推理成本，成为其 API 永久最高降价 99% 的核心技术底座。</div>
+                            </div>
+                            <div class="news-item bg-white border rounded-2xl p-5">
+                                <div class="flex justify-between items-start mb-1">
+                                    <div class="font-semibold text-base">OpenAI讨论将花旗、摩根大通纳入IPO承销商名单</div>
+                                    <span class="source">华尔街见闻</span>
+                                </div>
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
+                                    <span class="px-2 py-0.5 bg-sky-100 text-sky-700 rounded-full font-medium">AI/大模型</span>
+                                    <span class="text-slate-500">涉及：OpenAI, 花旗集团, 摩根大通, 高盛, 摩根士丹利</span>
+                                    <span class="font-semibold text-emerald-700">预计数周内保密提交 IPO 文件</span>
+                                </div>
+                                <div class="dense-text text-sm text-slate-600">据知情人士透露，OpenAI 已与花旗集团、摩根大通等银行讨论参与其即将到来的上市交易事宜，可能加入高盛和摩根士丹利的承销商行列。这表明这家 ChatGPT 开发商正加速推进其 IPO 进程，料将在几周内以保密形式提交文件。</div>
+                            </div>
+                            <div class="news-item bg-white border rounded-2xl p-5">
+                                <div class="flex justify-between items-start mb-1">
+                                    <div class="font-semibold text-base">财跃星辰 AI 小财神 V1.4 更新上线，升级为 Cashclaw CLI 形态</div>
+                                    <span class="source">科创板日报</span>
+                                </div>
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
+                                    <span class="px-2 py-0.5 bg-violet-100 text-violet-700 rounded-full font-medium">AI/大模型, 数据基建</span>
+                                    <span class="text-slate-500">涉及：财跃星辰, AI小财神</span>
+                                    <span class="font-semibold text-emerald-700">收敛为单一主 Agent</span>
+                                </div>
+                                <div class="dense-text text-sm text-slate-600">AI 小财神发布 V1.4 重大更新，核心将 Cashclaw 从多模板形态全面收敛为单一主 Agent（「Cashclaw CLI」形态），支持主动读取知识库、自选股并实现智能上下文感知。同时将 Pro 版“深度研究（DR）”能力下放至 APP，并推出可订阅的专家广场模块。</div>
+                            </div>
+                            <div class="news-item bg-white border rounded-2xl p-5">
+                                <div class="flex justify-between items-start mb-1">
+                                    <div class="font-semibold text-base">软银承诺投资750亿欧元在法国建设AI设施</div>
+                                    <span class="source">华尔街见闻</span>
+                                </div>
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
+                                    <span class="px-2 py-0.5 bg-sky-100 text-sky-700 rounded-full font-medium">AI/大模型, 数据基建</span>
+                                    <span class="text-slate-500">涉及：软银集团</span>
+                                    <span class="font-semibold text-emerald-700">投资 750 亿欧元，总规模 5 GW</span>
+                                </div>
+                                <div class="dense-text text-sm text-slate-600">日本软银集团承诺在法国投资高达 750 亿欧元，用以打造庞大的人工智能（AI）计算集群网络，该项目将成为欧洲规模最大的数据中心项目。这也是孙正义领导的软银在海外进行的单笔最大规模 AI 投资。</div>
+                            </div>
+                            <div class="news-item bg-white border rounded-2xl p-5">
+                                <div class="flex justify-between items-start mb-1">
+                                    <div class="font-semibold text-base">面向超大规模药物发现的人工智能虚拟筛选平台——GalaxyVS 正式发布</div>
+                                    <span class="source">华尔街见闻</span>
+                                </div>
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
+                                    <span class="px-2 py-0.5 bg-violet-100 text-violet-700 rounded-full font-medium">AI/大模型, 前沿医疗</span>
+                                    <span class="text-slate-500">涉及：华能集团, 天河超算</span>
+                                    <span class="font-semibold text-emerald-700">近千亿级可合成化合物空间</span>
+                                </div>
+                                <div class="dense-text text-sm text-slate-600">依托新一代天河超级计算系统打造的 GalaxyVS 虚拟筛选平台正式发布。平台构建了覆盖分子表征、向量检索、亲和力重排序和大规模任务调度的端到端技术体系，为超大规模创新药物研发提供了高扩展性基础平台。</div>
+                            </div>
+                            <div class="news-item bg-white border rounded-2xl p-5">
+                                <div class="flex justify-between items-start mb-1">
+                                    <div class="font-semibold text-base">网易智企阮良：正帮助企业构建“AI员工”</div>
+                                    <span class="source">华尔街见闻</span>
+                                </div>
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
+                                    <span class="px-2 py-0.5 bg-sky-100 text-sky-700 rounded-full font-medium">AI/大模型</span>
+                                    <span class="text-slate-500">涉及：网易智企, 英特尔</span>
+                                    <span class="font-semibold text-emerald-700">聚焦销售增长与流程交付</span>
+                                </div>
+                                <div class="dense-text text-sm text-slate-600">网易副总裁阮良在创新企业大会上指出，AI 进入企业生产系统面临知识、数据、流程等五大断层，企业级 Agent 的关键在于持续交付可靠结果。网易智企正围绕高价值场景帮助企业构建可部署、可评估的“AI 员工”。</div>
+                            </div>
+                            <div class="news-item bg-white border rounded-2xl p-5">
+                                <div class="flex justify-between items-start mb-1">
+                                    <div class="font-semibold text-base">乐奇AI眼镜创日本Makuake平台众筹新纪录</div>
+                                    <span class="source">36氪</span>
+                                </div>
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
+                                    <span class="px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full font-medium">硬件/消费, AI/大模型</span>
+                                    <span class="text-slate-500">涉及：乐奇AI眼镜 (Rokid)</span>
+                                    <span class="font-semibold text-emerald-700">累计众筹销额超 6.24 亿日元</span>
+                                </div>
+                                <div class="dense-text text-sm text-slate-600">乐奇 AI 眼镜在日本第一众筹平台 Makuake 刷新了该平台成立 13 年以来的全品类最高销售纪录，累计斩获超 6.24 亿日元销售额，成为同品类历史最高众筹额项目。</div>
+                            </div>
+                            <div class="news-item bg-white border rounded-2xl p-5">
+                                <div class="flex justify-between items-start mb-1">
+                                    <div class="font-semibold text-base">天津发布2025年度人工智能十大应用标杆场景</div>
                                     <span class="source">36氪</span>
                                 </div>
                                 <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
                                     <span class="px-2 py-0.5 bg-sky-100 text-sky-700 rounded-full font-medium">AI/大模型</span>
-                                    <span class="text-slate-500">涉及：Anthropic</span>
-                                    <span class="font-semibold text-emerald-700">H轮融资650亿美元，估值9650亿美元</span>
+                                    <span class="text-slate-500">涉及：天津市政府</span>
+                                    <span class="font-semibold text-emerald-700">总投资额超 6 亿元</span>
                                 </div>
-                                <div class="dense-text text-sm text-slate-600">人工智能初创公司Anthropic PBC完成新一轮（H轮）巨额融资，募资额达650亿美元，投后估值一举升至9650亿美元，在资本与估值层面上首次超越主要竞争对手OpenAI。</div>
-                            </div>
-
-                            <div class="news-item bg-white border rounded-2xl p-5">
-                                <div class="flex justify-between items-start mb-1">
-                                    <div class="font-semibold text-base">MiniMax启动A股IPO辅导备案</div>
-                                    <span class="source">华尔街见闻</span>
-                                </div>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
-                                    <span class="px-2 py-0.5 bg-sky-100 text-sky-700 rounded-full font-medium">AI/大模型</span>
-                                    <span class="text-slate-500">涉及：MiniMax, 中信证券</span>
-                                    <span class="font-semibold text-emerald-700">签署上市辅导协议</span>
-                                </div>
-                                <div class="dense-text text-sm text-slate-600">证监会披露国内头部大模型厂商MiniMax已与中信证券签署辅导协议，正式启动A股IPO进程，成为国内首个迈出实质性上市步伐的AI大模型独角兽，对一级市场退出具有关键风向标意义。</div>
-                            </div>
-
-                            <div class="news-item bg-white border rounded-2xl p-5">
-                                <div class="flex justify-between items-start mb-1">
-                                    <div class="font-semibold text-base">OpenAI将通过亚洲云服务商Datasection进行最新模型部署</div>
-                                    <span class="source">科创板日报</span>
-                                </div>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
-                                    <span class="px-2 py-0.5 bg-sky-100 text-sky-700 rounded-full font-medium">AI/大模型</span>
-                                    <span class="text-slate-500">涉及：OpenAI, Datasection</span>
-                                    <span class="font-semibold text-emerald-700">亚太战略商业化落地</span>
-                                </div>
-                                <div class="dense-text text-sm text-slate-600">OpenAI亚太战略宣布将最新模型的推理部署与算力底座搭建在第三方云服务商Datasection之上，这是其解除了与微软的独家限制性合作后，首次公开选择第三方新云平台进行商业化落地。</div>
-                            </div>
-
-                            <div class="news-item bg-white border rounded-2xl p-5">
-                                <div class="flex justify-between items-start mb-1">
-                                    <div class="font-semibold text-base">腾讯云数据库面向 Agent 全面升级</div>
-                                    <span class="source">华尔街见闻</span>
-                                </div>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
-                                    <span class="px-2 py-0.5 bg-violet-100 text-violet-700 rounded-full font-medium">数据基建, AI/大模型</span>
-                                    <span class="text-slate-500">涉及：腾讯云</span>
-                                    <span class="font-semibold text-emerald-700">提供三大AI原生数据库能力</span>
-                                </div>
-                                <div class="dense-text text-sm text-slate-600">腾讯云宣布旗下数据库产品体系面向Agent场景完成全面升级，原生地为Agent应用、AI编程和智能运维三大前沿场景提供底层算力与记忆、检索支持，重构数据流转效率。</div>
-                            </div>
-
-                            <div class="news-item bg-white border rounded-2xl p-5">
-                                <div class="flex justify-between items-start mb-1">
-                                    <div class="font-semibold text-base">阿里云百炼CLI开源</div>
-                                    <span class="source">华尔街见闻</span>
-                                </div>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
-                                    <span class="px-2 py-0.5 bg-sky-100 text-sky-700 rounded-full font-medium">AI/大模型</span>
-                                    <span class="text-slate-500">涉及：阿里云</span>
-                                    <span class="font-semibold text-emerald-700">Github开源支持多框架</span>
-                                </div>
-                                <div class="dense-text text-sm text-slate-600">阿里云百炼核心能力全面实现CLI化并在Github开源。开发者可通过一行命令让智能体自动接入百炼平台的150多款模型及全套应用能力，原生支持Claude Code等主流AI Agent框架。</div>
-                            </div>
-
-                            <div class="news-item bg-white border rounded-2xl p-5">
-                                <div class="flex justify-between items-start mb-1">
-                                    <div class="font-semibold text-base">亚马逊员工刷AI数据致算力成本激增，公司关闭使用量排行榜</div>
-                                    <span class="source">华尔街见闻</span>
-                                </div>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
-                                    <span class="px-2 py-0.5 bg-sky-100 text-sky-700 rounded-full font-medium">AI/大模型</span>
-                                    <span class="text-slate-500">涉及：亚马逊</span>
-                                    <span class="font-semibold text-emerald-700">内部工具“Kirorank”下线</span>
-                                </div>
-                                <div class="dense-text text-sm text-slate-600">亚马逊因部分员工为冲内部排行榜滥用AI智能体执行大量无意义操作、导致公司算力成本激增，本周紧急关停了基于AI活动量为开发者打分评价的内部服务工具“Kirorank”。</div>
-                            </div>
-
-                            <div class="news-item bg-white border rounded-2xl p-5">
-                                <div class="flex justify-between items-start mb-1">
-                                    <div class="font-semibold text-base">Meta计划推出AI吊坠，作为其可穿戴设备路线图的一部分</div>
-                                    <span class="source">华尔街见闻</span>
-                                </div>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
-                                    <span class="px-2 py-0.5 bg-sky-100 text-sky-700 rounded-full font-medium">硬件/消费, AI/大模型</span>
-                                    <span class="text-slate-500">涉及：Meta Platforms</span>
-                                    <span class="font-semibold text-emerald-700">消费级AI智能体“Hatch”开发</span>
-                                </div>
-                                <div class="dense-text text-sm text-slate-600">内部备忘录显示，Meta计划于明年开始测试一款AI吊坠可穿戴设备，并正在开发一款名为“Hatch”的消费级AI智能体，旨在推动其大模型在工作与日常场景中的高频落地。</div>
+                                <div class="dense-text text-sm text-slate-600">2026 世界智能产业博览会期间，天津市正式发布 2025 年度人工智能十大应用标杆场景，涵盖科研、制造、医疗、康养、治理等 9 大领域，总投资额超过 6 亿元。</div>
                             </div>
                         </div>
                     </div>
 
                     <!-- 二、半导体与硬件供应链 -->
                     <div>
-                        <h3 class="text-xl font-semibold text-slate-800 mb-2 pl-1">半导体与硬件供应链</h3>
-                        <p class="text-sm text-slate-500 mb-4 pl-1 leading-relaxed">AI 技术应用由单纯的云端大模型向代理式 AI 的扩散，正在驱动整个半导体硬件供应链与存储器行业产值大幅上修。算力基础设施需求的强劲爆发，令服务器核心厂商订单飙升。与此同时，国产算力产业链正在加速完善其全栈软件生态栈，力求在异构计算平台和自研数据库底层上实现“发布即适配”的高效闭环，通过软硬件协同破解痛点，满足关键信息基础设施自主化升级的深水区需求。</p>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2 pl-1">二、半导体与硬件供应链</h3>
+                        <div class="trend-box p-4 rounded-xl mb-4 text-sm text-slate-700">
+                            虽然宏观地缘冲突（如美军持续海上封锁、霍尔木兹海峡漂浮水雷隐患）对全球大宗商品与传统供应链造成了一定程度的扰动，但硬科技领域的底层供应链与核心系统软件依然在按其固有的自主化节奏演进。海光信息在阶跃星辰模型发布当日即完成深度调优适配，印证了国产异构计算芯片在软硬件一体化全栈软件栈上的快速响应能力。而崖山数据库等全栈自研基础软件和自主可控低空经济条例的推进，正在为新型基础设施建设（如智慧城市运营、低空空域协同）筑牢最底层的技术闭环与制度基石。
+                        </div>
                         <div class="space-y-4">
-                            <div class="news-item bg-white border rounded-2xl p-5">
-                                <div class="flex justify-between items-start mb-1">
-                                    <div class="font-semibold text-base">墨芯人工智能完成C轮近十亿元融资</div>
-                                    <span class="source">36氪</span>
-                                </div>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
-                                    <span class="px-2 py-0.5 bg-violet-100 text-violet-700 rounded-full font-medium">AI芯片, 半导体</span>
-                                    <span class="text-slate-500">涉及：墨芯人工智能</span>
-                                    <span class="font-semibold text-emerald-700">C轮近十亿元融资</span>
-                                </div>
-                                <div class="dense-text text-sm text-slate-600">底层AI芯片设计商墨芯人工智能宣布完成近十亿元C轮融资，资金将主要用于加速技术迭代，其采用稀疏化计算架构的下一代芯片SparsePrime®预计将于年内正式推出。</div>
-                            </div>
-
-                            <div class="news-item bg-white border rounded-2xl p-5">
-                                <div class="flex justify-between items-start mb-1">
-                                    <div class="font-semibold text-base">预估2027年全球存储器产值将扩大至1.28万亿美元</div>
-                                    <span class="source">科创板日报</span>
-                                </div>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
-                                    <span class="px-2 py-0.5 bg-violet-100 text-violet-700 rounded-full font-medium">半导体, 存储芯片</span>
-                                    <span class="text-slate-500">涉及：TrendForce</span>
-                                    <span class="font-semibold text-emerald-700">产值上修至1.28万亿美元，年增44%</span>
-                                </div>
-                                <div class="dense-text text-sm text-slate-600">TrendForce集邦咨询大幅上修全球存储器产值预测，2026年提高至8893亿美元，2027年将突破1.28万亿美元。核心驱动力在于AI应用向推理端和Agent端扩散带来的存储结构性暴增。</div>
-                            </div>
-
-                            <div class="news-item bg-white border rounded-2xl p-5">
-                                <div class="flex justify-between items-start mb-1">
-                                    <div class="font-semibold text-base">戴尔美股盘后狂飙将近40%，高管直呼“AI机遇未见放缓迹象”</div>
-                                    <span class="source">华尔街见闻</span>
-                                </div>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
-                                    <span class="px-2 py-0.5 bg-violet-100 text-violet-700 rounded-full font-medium">硬件供应链, AI算力</span>
-                                    <span class="text-slate-500">涉及：戴尔科技</span>
-                                    <span class="font-semibold text-emerald-700">AI服务器销售展望上调至600亿美元</span>
-                                </div>
-                                <div class="dense-text text-sm text-slate-600">戴尔Q1营收因AI服务器需求暴增实现强劲增长，单季斩获244亿美元AI订单并实现161亿美元服务器销售，公司随即大幅上调全年销售展望至600亿美元，高管强调AI算力需求无放缓迹象。</div>
-                            </div>
-
                             <div class="news-item bg-white border rounded-2xl p-5">
                                 <div class="flex justify-between items-start mb-1">
                                     <div class="font-semibold text-base">海光信息完成阶跃星辰Step 3.7 Flash适配</div>
@@ -242,367 +338,221 @@
                                 <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
                                     <span class="px-2 py-0.5 bg-violet-100 text-violet-700 rounded-full font-medium">半导体, AI生态</span>
                                     <span class="text-slate-500">涉及：海光信息, 阶跃星辰</span>
-                                    <span class="font-semibold text-emerald-700">“发布即适配”深度调优</span>
+                                    <span class="font-semibold text-emerald-700">“发布即适配”高效运行</span>
                                 </div>
-                                <div class="dense-text text-sm text-slate-600">阶跃星辰发布新模型当天，海光团队依托DTK异构计算平台与全栈软件栈火速完成全流程适配与深度调优，实现开发者可在海光平台上高效编排多模态Agent与复杂工作流。</div>
+                                <div class="dense-text text-sm text-slate-600">依托 DTK 异构计算平台与全栈软件栈，海光团队在阶跃星辰 Step 3.7 Flash 模型发布当天即完成全流程适配与深度调优，实现开发者可在海光平台上高效搭建多模态 Agent 及复杂工作流。</div>
                             </div>
-
                             <div class="news-item bg-white border rounded-2xl p-5">
                                 <div class="flex justify-between items-start mb-1">
-                                    <div class="font-semibold text-base">深圳崖山数据库系统分布式版本成功通过安全可靠测评</div>
+                                    <div class="font-semibold text-base">深圳原创基础软件崖山数据库分布式版本通过安全可靠测评</div>
                                     <span class="source">科创板日报</span>
                                 </div>
                                 <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
-                                    <span class="px-2 py-0.5 bg-violet-100 text-violet-700 rounded-full font-medium">数据基建, 半导体生态</span>
+                                    <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 rounded-full font-medium">数据基建, 国产软件</span>
                                     <span class="text-slate-500">涉及：崖山数据库</span>
-                                    <span class="font-semibold text-emerald-700">最高等级“安全可靠测评”认证</span>
+                                    <span class="font-semibold text-emerald-700">支撑 38 亿余条异构数据</span>
                                 </div>
-                                <div class="dense-text text-sm text-slate-600">深圳计算科学研究院自主研发的崖山数据库系统成功通过国家级认证，作为国内唯一实现“从原创理论到核心系统全栈自研”闭环的本土数据库，已在深圳支撑起38亿条数据的智慧城市运营。</div>
+                                <div class="dense-text text-sm text-slate-600">深圳计算科学研究院自主研发的崖山数据库系统分布式版本通过中国信息安全测评中心“安全可靠测评”认证。该系统将 AI 原生能力融入底层，是唯一实现全栈自研闭环的本土数据库，已覆盖公共基础信息涉及人口约 1800 万。</div>
                             </div>
-
                             <div class="news-item bg-white border rounded-2xl p-5">
                                 <div class="flex justify-between items-start mb-1">
-                                    <div class="font-semibold text-base">市场监管总局批准发布血管芯片国家标准</div>
+                                    <div class="font-semibold text-base">广东省低空经济发展条例（征求意见稿）公开征求意见</div>
+                                    <span class="source">科创板日报</span>
+                                </div>
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
+                                    <span class="px-2 py-0.5 bg-teal-100 text-teal-700 rounded-full font-medium">宏观/政策</span>
+                                    <span class="text-slate-500">涉及：广东省发改委</span>
+                                    <span class="font-semibold text-emerald-700">构建低空空域协同运行机制</span>
+                                </div>
+                                <div class="dense-text text-sm text-slate-600">广东省发改委就低空经济发展条例征求意见，针对空域开放不足、基础设施不完善等突出瓶颈靶向施策，提出构建协同运行机制、强化飞行监督、探索推广新型低空应用场景等制度安排。</div>
+                            </div>
+                            <div class="news-item bg-white border rounded-2xl p-5">
+                                <div class="flex justify-between items-start mb-1">
+                                    <div class="font-semibold text-base">麒麟软件发布两款全新操作系统</div>
+                                    <span class="source">科创板日报</span>
+                                </div>
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
+                                    <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 rounded-full font-medium">国产软件</span>
+                                    <span class="text-slate-500">涉及：麒麟软件</span>
+                                    <span class="font-semibold text-emerald-700">工业系统V10与端侧Kylinbot亮相</span>
+                                </div>
+                                <div class="dense-text text-sm text-slate-600">麒麟软件在智能产业博览会上发布麒麟工业操作系统 V10、麒麟 100 智联操作系统，其端侧智能体“Kylinbot”也首次公开亮相，全面展示其在打造先进计算算力底座方面的成果。</div>
+                            </div>
+                            <div class="news-item bg-white border rounded-2xl p-5">
+                                <div class="flex justify-between items-start mb-1">
+                                    <div class="font-semibold text-base">搭载英伟达芯片的Windows PC将于下周亮相</div>
                                     <span class="source">华尔街见闻</span>
                                 </div>
                                 <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
-                                    <span class="px-2 py-0.5 bg-violet-100 text-violet-700 rounded-full font-medium">器官芯片, 生物半导体</span>
-                                    <span class="text-slate-500">涉及：市场监管总局</span>
-                                    <span class="font-semibold text-emerald-700">2027年5月1日起正式实施</span>
+                                    <span class="px-2 py-0.5 bg-violet-100 text-violet-700 rounded-full font-medium">半导体, 硬件供应链</span>
+                                    <span class="text-slate-500">涉及：英伟达, 微软</span>
+                                    <span class="font-semibold text-emerald-700">ComputeX 大会前夜预告</span>
                                 </div>
-                                <div class="dense-text text-sm text-slate-600">国家市场监管总局批准发布推荐性国家标准《血管芯片通用技术要求》，利用微流控技术在体外动态模拟血管生理过程，标志着我国器官芯片标准体系建设迈出关键一步。</div>
-                            </div>
-
-                            <div class="news-item bg-white border rounded-2xl p-5">
-                                <div class="flex justify-between items-start mb-1">
-                                    <div class="font-semibold text-base">深圳市江波龙电子股份有限公司在港交所提交上市申请</div>
-                                    <span class="source">华尔街见闻</span>
-                                </div>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
-                                    <span class="px-2 py-0.5 bg-violet-100 text-violet-700 rounded-full font-medium">半导体, 存储器</span>
-                                    <span class="text-slate-500">涉及：江波龙</span>
-                                    <span class="font-semibold text-emerald-700">H股上市申请，中信与花旗保荐</span>
-                                </div>
-                                <div class="dense-text text-sm text-slate-600">半导体存储龙头江波龙正式向港交所递交H股上市申请书，联合保荐人为中信证券和花旗银行，此举将进一步拓宽其国际资本运作通道与海外融资布局。</div>
+                                <div class="dense-text text-sm text-slate-600">媒体报道称，首款搭载英伟达芯片的 Windows PC 产品预计将在微软旗下 Surface 品牌以及戴尔等电脑厂商的产品中亮相。微软预计还将推出配合软件，以便用户在本地更轻松运行 AI 代理。</div>
                             </div>
                         </div>
                     </div>
 
                     <!-- 三、具身智能与汽车科技 -->
                     <div>
-                        <h3 class="text-xl font-semibold text-slate-800 mb-2 pl-1">具身智能与汽车科技</h3>
-                        <p class="text-sm text-slate-500 mb-4 pl-1 leading-relaxed">具身智能正在从宽泛的技术想象收敛至高确定性的垂直商业场景（如理疗健康、特种作业等），核心运控算法与机械臂硬件的结合已步入量产前夜。在汽车智能硬件底层，智驾芯片正向更高级别的先进制程演进，头部主机厂通过垂直整合实现核心芯片量产，并开始在商业与法律层面上主动承接更高级别的智驾安全责任，这正在重构整个智能汽车产业链的信任与定价机制。</p>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2 pl-1">三、具身智能与汽车科技</h3>
+                        <div class="trend-box p-4 rounded-xl mb-4 text-sm text-slate-700">
+                            具身智能出海战略已初见成效，部分头部玩家在海外市场的突破，印证了国内整机组装与工程落地的全球竞争力。主机厂供应链侧则继续呈现巨头分化的特征，吉利再度大刀阔斧整合中央研究院辅助驾驶团队至极氪和千里智驾合资的“千里浩瀚”体系，旨在集中优势兵力专职定制化开发与量产交付，反映出汽车智驾市场已从“画饼研发”走向“拼交付、拼装车量”的深水区。同时，乘联会数据指出，中国车市虽受春节因素异常波动，但占全球汽车市场三成以上的份额依然稳固，随着补能基础设施（如宁德时代换电站的快速下沉）网络编织完成，下半年产业政策刺激下的回暖确定性极高。
+                        </div>
                         <div class="space-y-4">
                             <div class="news-item bg-white border rounded-2xl p-5">
                                 <div class="flex justify-between items-start mb-1">
-                                    <div class="font-semibold text-base">“易启未来”完成数千万元A轮融资</div>
-                                    <span class="source">36氪</span>
+                                    <div class="font-semibold text-base">智元机器人姚卯青：今年上半年海外收入占比已近20%</div>
+                                    <span class="source">科创板日报</span>
                                 </div>
                                 <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
                                     <span class="px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full font-medium">机器人, 具身智能</span>
-                                    <span class="text-slate-500">涉及：易启未来, 网易</span>
-                                    <span class="font-semibold text-emerald-700">A轮数千万元融资</span>
+                                    <span class="text-slate-500">涉及：智元机器人</span>
+                                    <span class="font-semibold text-emerald-700">上半年海外收入占比近 20%</span>
                                 </div>
-                                <div class="dense-text text-sm text-slate-600">由网易伏羲孵化的按摩机器人公司“易启未来”完成数千万元A轮融资，由同创伟业、优山资本等联合投资。公司自研3秒穴位识别与六轴机械臂运控算法，资金将用于规模化量产与海内外拓展。</div>
+                                <div class="dense-text text-sm text-slate-600">智元机器人合伙人姚卯青透露，公司去年全年海外收入占比不到 10%，而今年上半年这一数字已接近 20%。未来北美、欧洲、日韩将是公司计划进行大规模商业突破的核心市场。</div>
                             </div>
-
                             <div class="news-item bg-white border rounded-2xl p-5">
                                 <div class="flex justify-between items-start mb-1">
-                                    <div class="font-semibold text-base">比亚迪发布首款4nm智驾芯片，已开始量产</div>
+                                    <div class="font-semibold text-base">吉利集团再度整合智驾团队</div>
                                     <span class="source">华尔街见闻</span>
                                 </div>
                                 <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
-                                    <span class="px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full font-medium">智能车, 半导体</span>
-                                    <span class="text-slate-500">涉及：比亚迪</span>
-                                    <span class="font-semibold text-emerald-700">4nm制程，主动承担安全责任</span>
+                                    <span class="px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full font-medium">汽车/自动驾驶</span>
+                                    <span class="text-slate-500">涉及：吉利汽车, 千里智驾</span>
+                                    <span class="font-semibold text-emerald-700">数百人辅助驾驶团队合同转移</span>
                                 </div>
-                                <div class="dense-text text-sm text-slate-600">比亚迪重磅发布首款自研4nm智驾芯片并宣布进入量产阶段。官方承诺将在技术与商业层面上主动承担L2级智能驾驶运行阶段的L3、L4级安全责任，引发行业广泛关注。</div>
+                                <div class="dense-text text-sm text-slate-600">消息称吉利中央研究院数百人规模的辅助驾驶团队近期将被整体整合进入千里科技体系，整体平移至合资公司“千里浩瀚”，负责具体车型的定制化开发与量产交付；吉利公司对此不予回应。</div>
                             </div>
-
                             <div class="news-item bg-white border rounded-2xl p-5">
                                 <div class="flex justify-between items-start mb-1">
-                                    <div class="font-semibold text-base">智能网联新能源汽车等高端装备产业国际竞争力显著提升</div>
-                                    <span class="source">科创板日报</span>
-                                </div>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
-                                    <span class="px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full font-medium">汽车科技, 先进制造</span>
-                                    <span class="text-slate-500">涉及：工信部装备工业发展中心</span>
-                                    <span class="font-semibold text-emerald-700">重点领域领先占比达60.8%</span>
-                                </div>
-                                <div class="dense-text text-sm text-slate-600">工信部官员在论坛上指出，我国高端装备产业国际竞争力显著提升，其中智能网联新能源汽车、新能源装备等已处于世界领先地位，产业规模占装备制造业超六成。</div>
-                            </div>
-
-                            <div class="news-item bg-white border rounded-2xl p-5">
-                                <div class="flex justify-between items-start mb-1">
-                                    <div class="font-semibold text-base">比亚迪宋Ultra DM-i正式上市</div>
+                                    <div class="font-semibold text-base">宁德时代：巧克力换电累计落站1650座</div>
                                     <span class="source">华尔街见闻</span>
                                 </div>
                                 <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
-                                    <span class="px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full font-medium">智能车</span>
-                                    <span class="text-slate-500">涉及：比亚迪</span>
-                                    <span class="font-semibold text-emerald-700">售价12.99万—15.99万元</span>
-                                </div>
-                                <div class="dense-text text-sm text-slate-600">比亚迪B级插混SUV宋Ultra DM-i正式上市，首次将具备310公里纯电续航（CLTC制式）的B级插混车型售价拉入13万元以内区间，直接加剧细分大单品市场竞争。</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 四、脑机接口与前沿医疗 -->
-                    <div>
-                        <h3 class="text-xl font-semibold text-slate-800 mb-2 pl-1">脑机接口与前沿医疗</h3>
-                        <p class="text-sm text-slate-500 mb-4 pl-1 leading-relaxed">脑机接口（BCI）与前沿生物硬件正在加速走出实验室，向消费健康、体育训练及临床医学进行双向渗透。跨国制药巨头与本土创新药企的百亿美元级大单合作，彰显出高壁垒创新医疗资产在全球资本层面的强流动性。此外，新型电池材料的规模化量产与商业化落地，也在为未来的植入式与便携式前沿医疗装备硬件提供更加安全、低成本的能源选项。</p>
-                        <div class="space-y-4">
-                            <div class="news-item bg-white border rounded-2xl p-5">
-                                <div class="flex justify-between items-start mb-1">
-                                    <div class="font-semibold text-base">半年访谈600+用户、获千万元融资，这名清华毕业生想把脑机“戴”进运动场</div>
-                                    <span class="source">36氪</span>
-                                </div>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
-                                    <span class="px-2 py-0.5 bg-rose-100 text-rose-700 rounded-full font-medium">脑机接口</span>
-                                    <span class="text-slate-500">涉及：脑机接口项目团队</span>
-                                    <span class="font-semibold text-emerald-700">千万元级早期融资</span>
-                                </div>
-                                <div class="dense-text text-sm text-slate-600">某清华毕业生创业的脑机接口项目获千万元融资。团队已积累约500小时涵盖脑电、IMU等维度的多模态数据，计划将高壁垒脑机设备率先导入射击、高尔夫等体育运动训练场景。</div>
-                            </div>
-
-                            <div class="news-item bg-white border rounded-2xl p-5">
-                                <div class="flex justify-between items-start mb-1">
-                                    <div class="font-semibold text-base">腾讯入股脑机接口与神经生物芯片研发商暖芯迦</div>
-                                    <span class="source">华尔街见闻</span>
-                                </div>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
-                                    <span class="px-2 py-0.5 bg-rose-100 text-rose-700 rounded-full font-medium">脑机接口, 半导体</span>
-                                    <span class="text-slate-500">涉及：腾讯, 暖芯迦</span>
-                                    <span class="font-semibold text-emerald-700">战略投资，注册资本增至1688万</span>
-                                </div>
-                                <div class="dense-text text-sm text-slate-600">企查查显示杭州暖芯迦电子科技发生工商变更，新增腾讯旗下投资公司为股东。暖芯迦成立于2014年，核心专注于脑机接口以及神经生物芯片的自主研发与生产销售。</div>
-                            </div>
-
-                            <div class="news-item bg-white border rounded-2xl p-5">
-                                <div class="flex justify-between items-start mb-1">
-                                    <div class="font-semibold text-base">信达生物和辉瑞签署价值高达105亿美元的肿瘤药物开发协议</div>
-                                    <span class="source">华尔街见闻</span>
-                                </div>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
-                                    <span class="px-2 py-0.5 bg-rose-100 text-rose-700 rounded-full font-medium">前沿医疗</span>
-                                    <span class="text-slate-500">涉及：信达生物, 辉瑞</span>
-                                    <span class="font-semibold text-emerald-700">105亿美元全球合作协议</span>
-                                </div>
-                                <div class="dense-text text-sm text-slate-600">辉瑞公司与中国的信达生物签署总额高达105亿美元的全球抗癌药物开发协议，包含6.5亿美元首付款及最高达98.5亿美元的潜在里程碑付款，创下港股生物医药板块近期纪录。</div>
-                            </div>
-
-                            <div class="news-item bg-white border rounded-2xl p-5">
-                                <div class="flex justify-between items-start mb-1">
-                                    <div class="font-semibold text-base">宁德时代今年实现钠离子电池规模量产，下一步聚焦锂空气电池研发</div>
-                                    <span class="source">华尔街见闻</span>
-                                </div>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
-                                    <span class="px-2 py-0.5 bg-rose-100 text-rose-700 rounded-full font-medium">新能源, 前沿硬件</span>
+                                    <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 rounded-full font-medium">智能车, 基础设施</span>
                                     <span class="text-slate-500">涉及：宁德时代</span>
-                                    <span class="font-semibold text-emerald-700">钠电池量产，布局锂空气电池</span>
+                                    <span class="font-semibold text-emerald-700">2026 年底目标突破 3000 座</span>
                                 </div>
-                                <div class="dense-text text-sm text-slate-600">宁德时代首席科学家吴凯表示，今年公司将实现钠离子电池产品的规模化量产，依托其丰富的原材料资源大幅降低硬件电池成本；下一步研发将聚焦超高理论能量密度的锂空气电池。</div>
+                                <div class="dense-text text-sm text-slate-600">截至 2026 年 5 月，宁德时代巧克力换电站在全国已落站 1650 座，覆盖 127 城，不到半年新增超 600 站。根据规划，2026 年底将突破 3000 座，并于 2027 年形成“11纵9横”高速换电网络。</div>
                             </div>
-
                             <div class="news-item bg-white border rounded-2xl p-5">
                                 <div class="flex justify-between items-start mb-1">
-                                    <div class="font-semibold text-base">豌豆智能完成天使轮融资，发力AI睡眠健康</div>
-                                    <span class="source">36氪</span>
-                                </div>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
-                                    <span class="px-2 py-0.5 bg-rose-100 text-rose-700 rounded-full font-medium">前沿医疗, 智能硬件</span>
-                                    <span class="text-slate-500">涉及：豌豆智能</span>
-                                    <span class="font-semibold text-emerald-700">天使轮融资，君联资本独家投资</span>
-                                </div>
-                                <div class="dense-text text-sm text-slate-600">豌豆智能宣布完成天使轮融资，由君联资本独家投资、多维资本深度孵化。公司聚焦AI在睡眠健康领域的软硬件融合应用，加速推进产品化落地。</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 五、商业航天与先进制造 -->
-                    <div>
-                        <h3 class="text-xl font-semibold text-slate-800 mb-2 pl-1">商业航天与先进制造</h3>
-                        <p class="text-sm text-slate-500 mb-4 pl-1 leading-relaxed">商业航天产业链正经历由单纯的“技术验证”向大体量“地面试演与商业发射常态化”过渡的关键节点。虽然高重型运载技术的研发与测试面临极高的异常容错率与隐形门槛，但头部战略投资与产业资本的持续加码，表明商业空间轨道资产仍是长期科技投资的必争之地。</p>
-                        <div class="space-y-4">
-                            <div class="news-item bg-white border rounded-2xl p-5">
-                                <div class="flex justify-between items-start mb-1">
-                                    <div class="font-semibold text-base">「穿越者」载人航天公司完成新一轮亿元融资</div>
-                                    <span class="source">36氪</span>
-                                </div>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
-                                    <span class="px-2 py-0.5 bg-teal-100 text-teal-700 rounded-full font-medium">商业航天</span>
-                                    <span class="text-slate-500">涉及：穿越者, 探路者</span>
-                                    <span class="font-semibold text-emerald-700">Pre-A轮亿元融资，战投领投</span>
-                                </div>
-                                <div class="dense-text text-sm text-slate-600">北京穿越者载人航天宣布完成Pre-A轮亿元融资，由某头部互联网战投领投，上市公司探路者等跟投。资金将重点用于“穿越者壹号”载人飞船核心系统研发与攻关，2026年为其地面试验验证年。</div>
-                            </div>
-
-                            <div class="news-item bg-white border rounded-2xl p-5">
-                                <div class="flex justify-between items-start mb-1">
-                                    <div class="font-semibold text-base">ITER组织：超导磁体测试设施投入运行</div>
-                                    <span class="source">科创板日报</span>
-                                </div>
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
-                                    <span class="px-2 py-0.5 bg-teal-100 text-teal-700 rounded-full font-medium">先进制造, 新能源</span>
-                                    <span class="text-slate-500">涉及：ITER组织</span>
-                                    <span class="font-semibold text-emerald-700">成功冷却至零下269摄氏度进入超导状态</span>
-                                </div>
-                                <div class="dense-text text-sm text-slate-600">位于法国南部的国际热核聚变实验堆（ITER）组织宣布其世界规模最大的超导磁体低温测试设施投入运行，首个330吨环向场线圈已成功冷却至超导状态，多国深度参与该“人造太阳”项目。</div>
-                            </div>
-
-                            <div class="news-item bg-white border rounded-2xl p-5">
-                                <div class="flex justify-between items-start mb-1">
-                                    <div class="font-semibold text-base">美国蓝色起源公司火箭在发动机点火测试中发生爆炸</div>
+                                    <div class="font-semibold text-base">中信证券：坚定看好特斯拉机器人以及供应链企业</div>
                                     <span class="source">华尔街见闻</span>
                                 </div>
                                 <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
-                                    <span class="px-2 py-0.5 bg-teal-100 text-teal-700 rounded-full font-medium">商业航天</span>
-                                    <span class="text-slate-500">涉及：蓝色起源, NASA</span>
-                                    <span class="font-semibold text-emerald-700">发动机测试异常爆炸</span>
+                                    <span class="px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full font-medium">机器人</span>
+                                    <span class="text-slate-500">涉及：特斯拉, 中信证券</span>
+                                    <span class="font-semibold text-emerald-700">V3 版本设计接近定型</span>
                                 </div>
-                                <div class="dense-text text-sm text-slate-600">蓝色起源旗下“新格伦”火箭在佛罗里达州进行测试时发生剧烈异常爆炸，NASA随后发文表示航天飞行容错率极低，将与蓝色起源协作彻查此事故并评估对近期任务的影响。</div>
+                                <div class="dense-text text-sm text-slate-600">中信证券研报指出，世界知识产权组织公开了特斯拉机器人新一批专利，灵巧手为其核心升级点之一。判断机器人 V3 版本设计已接近定型，即将进入量产阶段，坚定看好其供应链企业。</div>
                             </div>
-
                             <div class="news-item bg-white border rounded-2xl p-5">
                                 <div class="flex justify-between items-start mb-1">
-                                    <div class="font-semibold text-base">飞船返回舱成功着陆，神二十一乘组凯旋</div>
+                                    <div class="font-semibold text-base">乘联分会崔东树：2026年1-4月中国占世界汽车份额31%</div>
+                                    <span class="source">36氪, 华尔街见闻</span>
+                                </div>
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
+                                    <span class="px-2 py-0.5 bg-amber-100 text-amber-700 rounded-full font-medium">汽车科技</span>
+                                    <span class="text-slate-500">涉及：乘联分会</span>
+                                    <span class="font-semibold text-emerald-700">1-4月世界车市销量 3096 万台</span>
+                                </div>
+                                <div class="dense-text text-sm text-slate-600">崔东树发文称，2026 年初中国占全球汽车市场份额为 30.9%（年初较低因春节异常体现），2025 年全年中国份额为 35.4%。预计随着政策刺激效果恢复显现，下半年中国车市将逐步走强。</div>
+                            </div>
+                            <div class="news-item bg-white border rounded-2xl p-5">
+                                <div class="flex justify-between items-start mb-1">
+                                    <div class="font-semibold text-base">深圳网约车市场已饱和，官方发布风险提示</div>
                                     <span class="source">36氪</span>
                                 </div>
                                 <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
-                                    <span class="px-2 py-0.5 bg-teal-100 text-teal-700 rounded-full font-medium">载人航天</span>
-                                    <span class="text-slate-500">涉及：中国载人航天工程办公室</span>
-                                    <span class="font-semibold text-emerald-700">东风着陆场成功着陆</span>
+                                    <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded-full font-medium">汽车科技</span>
+                                    <span class="text-slate-500">涉及：深圳市交通运输局</span>
+                                    <span class="font-semibold text-emerald-700">4月日均单车完成订单量 13.01 单</span>
                                 </div>
-                                <div class="dense-text text-sm text-slate-600">北京时间2026年5月29日20时11分，神舟二十一号航天员乘组搭乘神舟二十二号载人飞船在东风着陆场成功安全着陆，三名航天员身体状态良好，标志着本次载人航天任务取得圆满成功。</div>
+                                <div class="dense-text text-sm text-slate-600">深圳市交通运输局发布网约车行业风险提示，明确指出当前市场总体已饱和，郑重提醒从业人员理性审慎决策，并警惕“上班保底模式代收流水”、“虚假广告”等六大租车行业套路风险。</div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- 四、前沿生物与先进制造 -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2 pl-1">四、前沿生物与先进制造</h3>
+                        <div class="trend-box p-4 rounded-xl mb-4 text-sm text-slate-700">
+                            生命科学研究范式正迎来根本性变革，投资达7.22亿元的合成生物学重大基础设施正式开放，标志着该领域彻底告别了依靠手工和“博后人海战术”的劳动密集型历史。这种以智能化“功能岛”租用为核心的全新平台模态，大幅降低了初创企业的研发资本门槛，极有可能批量催生生物技术创业生态。与此同时，国资委指导、国家能源集团牵头的央企科技成果产业化联合体成立，则从顶层设计上打通了一站式、全链条的成果转化闭环，为战略性新兴产业的规模化交易培育了核心载体。
+                        </div>
+                        <div class="space-y-4">
+                            <div class="news-item bg-white border rounded-2xl p-5">
+                                <div class="flex justify-between items-start mb-1">
+                                    <div class="font-semibold text-base">全球首个合成生物学重大科技基础设施开放使用</div>
+                                    <span class="source">科创板日报</span>
+                                </div>
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
+                                    <span class="px-2 py-0.5 bg-rose-100 text-rose-700 rounded-full font-medium">合成生物, 前沿技术</span>
+                                    <span class="text-slate-500">涉及：深圳先进技术研究院</span>
+                                    <span class="font-semibold text-emerald-700">投资 7.22 亿元，实验效率提10倍</span>
+                                </div>
+                                <div class="dense-text text-sm text-slate-600">位于深圳光明科学城的全球首个合成生物学重大科技基础设施对全球开放，颠覆了生命科学传统劳动密集型模式，使实验效率提升 10 倍。初创企业可通过租用智能化“功能岛”开启技术创业。</div>
+                            </div>
+                            <div class="news-item bg-white border rounded-2xl p-5">
+                                <div class="flex justify-between items-start mb-1">
+                                    <div class="font-semibold text-base">中央企业科技成果产业化联合体在京成立</div>
+                                    <span class="source">科创板日报, 36氪</span>
+                                </div>
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
+                                    <span class="px-2 py-0.5 bg-teal-100 text-teal-700 rounded-full font-medium">先进制造</span>
+                                    <span class="text-slate-500">涉及：国务院国资委, 国家能源集团</span>
+                                    <span class="font-semibold text-emerald-700">计划 2026 年底完成规范化组建</span>
+                                </div>
+                                <div class="dense-text text-sm text-slate-600">由国资委指导、国家能源集团牵头、全体央企共建的科技成果产业化联合体正式成立，广泛吸纳高校及民企，旨在推动科技与产业创新融合，搭建全链条服务体系，2030年建成本地创新联合体。</div>
+                            </div>
+                            <div class="news-item bg-white border rounded-2xl p-5">
+                                <div class="flex justify-between items-start mb-1">
+                                    <div class="font-semibold text-base">工信部瞿国春：我国高端装备产业国际竞争力显著提升</div>
+                                    <span class="source">科创板日报</span>
+                                </div>
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
+                                    <span class="px-2 py-0.5 bg-teal-100 text-teal-700 rounded-full font-medium">先进制造</span>
+                                    <span class="text-slate-500">涉及：工信部装备工业发展中心</span>
+                                    <span class="font-semibold text-emerald-700">重点领域领先和先进占比达 60.8%</span>
+                                </div>
+                                <div class="dense-text text-sm text-slate-600">官员在论坛上指出，经过十年发展，我国高端装备产业规模占装备制造业总体超六成。智能网联汽车、新能源装备等已处世界领先地位，但在工业母机、机器人及半导体设备领域仍存差距。</div>
+                            </div>
+                            <div class="news-item bg-white border rounded-2xl p-5">
+                                <div class="flex justify-between items-start mb-1">
+                                    <div class="font-semibold text-base">国家制造强国委员会苏波：深度把握AI与先进制造融合趋势</div>
+                                    <span class="source">科创板日报</span>
+                                </div>
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
+                                    <span class="px-2 py-0.5 bg-teal-100 text-teal-700 rounded-full font-medium">先进制造</span>
+                                    <span class="text-slate-500">涉及：国家智能制造专家委员会</span>
+                                    <span class="font-semibold text-emerald-700">严格提出新一代智能制造架构</span>
+                                </div>
+                                <div class="dense-text text-sm text-slate-600">苏波在论坛上强调，推进新一代智能制造的核心抓手是深刻把握 AI 技术与先进制造的融合，必须进一步完善顶层设计，明确提出体系架构、发展路径及自主化升级的重点任务。</div>
+                            </div>
+                            <div class="news-item bg-white border rounded-2xl p-5">
+                                <div class="flex justify-between items-start mb-1">
+                                    <div class="font-semibold text-base">人形机器人被曝已投入战场</div>
+                                    <span class="source">华尔街见闻</span>
+                                </div>
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs mb-2">
+                                    <span class="px-2 py-0.5 bg-rose-100 text-rose-700 rounded-full font-medium">机器人, 先进制造</span>
+                                    <span class="text-slate-500">涉及：基础未来工业公司 (美)</span>
+                                    <span class="font-semibold text-emerald-700">1800 万美元订单，计划产 5 万台</span>
+                                </div>
+                                <div class="dense-text text-sm text-slate-600">美媒爆料美国基础未来工业公司已于乌克兰部署两台“幻影”MK-1 人形机器人用于侦察任务，可携 40kg 载荷。军事专家分析，从外形 and 设计理念看，该人形机器人基本上不能真正打仗。</div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+
+                <div class="mt-6 text-xs text-slate-500 border-t pt-3">本次行业动态数据完整来源于 industry_news_20260531.md，所有内容（包括趋势点评与 24 条结构化情报）均一字不改呈现。</div>
             </div>
 
-            <!-- IPO -->
-            <div>
-                <div class="flex items-baseline justify-between mb-3">
-                    <h2 class="section-header">IPO / 新上市管道</h2>
-                    <span class="text-xs px-3 py-1 bg-white border rounded-full text-slate-500">数据截至 2026.5.30</span>
-                </div>
-
-                <!-- SSE IPO Table -->
-                <div class="bg-white rounded-2xl shadow border overflow-hidden mb-8">
-                    <div class="px-6 py-4 border-b bg-slate-50">
-                        <div class="font-semibold text-lg">上海证券交易所 IPO 数据（共25家）</div>
-                    </div>
-                    <div class="overflow-x-auto p-2">
-                        <table class="ipo-table w-full text-sm">
-                            <thead>
-                                <tr>
-                                    <th>发行人全称</th>
-                                    <th>板块</th>
-                                    <th>审核状态</th>
-                                    <th>注册地</th>
-                                    <th>行业</th>
-                                    <th>保荐机构</th>
-                                    <th>律师事务所</th>
-                                    <th>会计师事务所</th>
-                                    <th>更新日期</th>
-                                    <th>受理日期</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>上海频准激光科技股份有限公司</td><td>科创板</td><td>上市委会议通过</td><td>上海</td><td>计算机、通信和其他电子设备制造业</td><td>中信建投证券股份有限公司</td><td>浙江天册律师事务所</td><td>中汇会计师事务所（特殊普通合伙）</td><td>2026-05-21</td><td>2025-12-08</td></tr>
-                                <tr><td>福建马坑矿业股份有限公司</td><td>主板</td><td>已问询</td><td>福建</td><td>黑色金属矿采选业</td><td>中信证券股份有限公司</td><td>福建至理律师事务所</td><td>华兴会计师事务所（特殊普通合伙）</td><td>2026-05-20</td><td>2025-12-04</td></tr>
-                                <tr><td>长鑫科技集团股份有限公司</td><td>科创板</td><td>已受理</td><td>安徽</td><td>计算机、通信和其他电子设备制造业</td><td>中国国际金融股份有限公司、中信建投证券股份有限公司</td><td>上海市锦天城律师事务所</td><td>德勤华永会计师事务所（特殊普通合伙）</td><td>2026-05-20</td><td>2025-12-30</td></tr>
-                                <tr><td>武汉新芯集成电路股份有限公司</td><td>科创板</td><td>终止</td><td>湖北</td><td>计算机、通信和其他电子设备制造业</td><td>国泰海通证券股份有限公司、华源证券股份有限公司</td><td>国浩律师（上海）事务所</td><td>安永华明会计师事务所（特殊普通合伙）</td><td>2026-05-19</td><td>2024-09-30</td></tr>
-                                <tr><td>杭州云深处科技股份有限公司</td><td>科创板</td><td>已受理</td><td>浙江</td><td>通用设备制造业</td><td>中信建投证券股份有限公司</td><td>北京市中伦律师事务所</td><td>天健会计师事务所（特殊普通合伙）</td><td>2026-05-18</td><td>2026-05-18</td></tr>
-                                <tr><td>苏州信诺维医药科技股份有限公司</td><td>科创板</td><td>已问询</td><td>江苏</td><td>医药制造业</td><td>国泰海通证券股份有限公司</td><td>北京市中伦律师事务所</td><td>安永华明会计师事务所（特殊普通合伙）</td><td>2026-05-18</td><td>2025-12-22</td></tr>
-                                <tr><td>杭州沃镭智能科技股份有限公司</td><td>科创板</td><td>已问询</td><td>浙江</td><td>专用设备制造业</td><td>中信建投证券股份有限公司</td><td>上海市锦天城律师事务所</td><td>中审众环会计师事务所（特殊普通合伙）</td><td>2026-05-18</td><td>2025-12-29</td></tr>
-                                <tr><td>苏州华太电子技术股份有限公司</td><td>科创板</td><td>已受理</td><td>江苏</td><td>计算机、通信和其他电子设备制造业</td><td>华泰联合证券有限责任公司</td><td>北京市中伦律师事务所</td><td>天衡会计师事务所（特殊普通合伙）</td><td>2026-05-15</td><td>2026-05-15</td></tr>
-                                <tr><td>江苏鑫华半导体科技股份有限公司</td><td>科创板</td><td>已问询</td><td>江苏</td><td>计算机、通信和其他电子设备制造业</td><td>招商证券股份有限公司</td><td>北京市竞天公诚律师事务所</td><td>毕马威华振会计师事务所（特殊普通合伙）</td><td>2026-05-15</td><td>2026-02-25</td></tr>
-                                <tr><td>浙江华盛雷达股份有限公司</td><td>科创板</td><td>已问询</td><td>浙江</td><td>计算机、通信和其他电子设备制造业</td><td>中信证券股份有限公司</td><td>北京国枫律师事务所</td><td>天健会计师事务所（特殊普通合伙）</td><td>2026-05-15</td><td>2025-12-31</td></tr>
-                                <tr><td>威邦运动科技集团股份公司</td><td>主板</td><td>已问询</td><td>浙江</td><td>文教、工美、体育和娱乐用品制造业</td><td>国泰海通证券股份有限公司</td><td>北京市金杜律师事务所</td><td>立信会计师事务所（特殊普通合伙）</td><td>2026-05-15</td><td>2026-04-15</td></tr>
-                                <tr><td>深之蓝海洋科技股份有限公司</td><td>科创板</td><td>已问询</td><td>天津</td><td>通用设备制造业</td><td>中国国际金融股份有限公司</td><td>北京金杜（成都）律师事务所</td><td>天职国际会计师事务所（特殊普通合伙）</td><td>2026-05-15</td><td>2025-12-26</td></tr>
-                                <tr><td>天津富士达自行车工业股份有限公司</td><td>主板</td><td>已问询</td><td>天津</td><td>铁路、船舶、航空航天和其他运输设备制造业</td><td>中泰证券股份有限公司</td><td>上海市锦天城律师事务所</td><td>立信会计师事务所（特殊普通合伙）</td><td>2026-05-15</td><td>2025-12-24</td></tr>
-                                <tr><td>广东保伦电子股份有限公司</td><td>主板</td><td>已受理</td><td>广东</td><td>计算机、通信和其他电子设备制造业</td><td>广发证券股份有限公司</td><td>北京市中伦律师事务所</td><td>天健会计师事务所（特殊普通合伙）</td><td>2026-05-13</td><td>2026-05-13</td></tr>
-                                <tr><td>国仪量子技术（合肥）股份有限公司</td><td>科创板</td><td>提交注册</td><td>安徽</td><td>仪器仪表制造业</td><td>华泰联合证券有限责任公司</td><td>安徽天禾律师事务所</td><td>容诚会计师事务所（特殊普通合伙）</td><td>2026-05-12</td><td>2025-12-10</td></tr>
-                                <tr><td>北京微纳星空科技股份有限公司</td><td>科创板</td><td>已受理</td><td>北京</td><td>铁路、船舶、航空航天和其他运输设备制造业</td><td>国泰海通证券股份有限公司</td><td>北京市中伦律师事务所</td><td>中汇会计师事务所（特殊普通合伙）</td><td>2026-05-11</td><td>2026-05-11</td></tr>
-                                <tr><td>株洲科能新材料股份有限公司</td><td>科创板</td><td>已受理</td><td>湖南</td><td>有色金属冶炼和压延加工业</td><td>申港证券股份有限公司</td><td>湖南启元律师事务所</td><td>信永中和会计师事务所（特殊普通合伙）</td><td>2026-05-11</td><td>2026-05-11</td></tr>
-                                <tr><td>锐石创芯（重庆）科技股份有限公司</td><td>科创板</td><td>已问询</td><td>重庆</td><td>计算机、通信和其他电子设备制造业</td><td>广发证券股份有限公司</td><td>北京国枫律师事务所</td><td>致同会计师事务所（特殊普通合伙）</td><td>2026-05-11</td><td>2025-12-30</td></tr>
-                                <tr><td>上海兆芯集成电路股份有限公司</td><td>科创板</td><td>已问询</td><td>上海</td><td>计算机、通信和其他电子设备制造业</td><td>国泰海通证券股份有限公司、东方证券股份有限公司</td><td>上海市锦天城律师事务所</td><td>上会会计师事务所（特殊普通合伙）</td><td>2026-05-06</td><td>2025-06-17</td></tr>
-                                <tr><td>天博智能科技（山东）股份有限公司</td><td>主板</td><td>已问询</td><td>山东</td><td>汽车制造业</td><td>中信建投证券股份有限公司</td><td>上海市广发律师事务所</td><td>天健会计师事务所（特殊普通合伙）</td><td>2026-04-30</td><td>2025-12-30</td></tr>
-                                <tr><td>财信证券股份有限公司</td><td>主板</td><td>已问询</td><td>湖南</td><td>资本市场服务</td><td>华创证券有限责任公司</td><td>湖南启元律师事务所</td><td>天健会计师事务所（特殊普通合伙）</td><td>2026-04-29</td><td>2023-03-01</td></tr>
-                                <tr><td>深圳核心医疗科技股份有限公司</td><td>科创板</td><td>已问询</td><td>广东</td><td>专用设备制造业</td><td>华泰联合证券有限责任公司</td><td>北京国枫律师事务所</td><td>安永华明会计师事务所（特殊普通合伙）</td><td>2026-04-24</td><td>2025-11-06</td></tr>
-                                <tr><td>重庆臻宝科技股份有限公司</td><td>科创板</td><td>注册生效</td><td>重庆</td><td>计算机、通信和其他电子设备制造业</td><td>中信证券股份有限公司</td><td>北京市中伦律师事务所</td><td>天健会计师事务所（特殊普通合伙）</td><td>2026-04-20</td><td>2025-06-26</td></tr>
-                                <tr><td>艾柯医疗器械（北京）股份有限公司</td><td>科创板</td><td>已问询</td><td>北京</td><td>专用设备制造业</td><td>中信证券股份有限公司</td><td>北京市竞天公诚律师事务所</td><td>安永华明会计师事务所（特殊普通合伙）</td><td>2026-04-18</td><td>2026-03-24</td></tr>
-                                <tr><td>赛克赛斯生物科技股份有限公司</td><td>科创板</td><td>已问询</td><td>山东</td><td>专用设备制造业</td><td>光大证券股份有限公司</td><td>上海澄明则正律师事务所</td><td>信永中和会计师事务所（特殊普通合伙）</td><td>2026-04-17</td><td>2026-03-24</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- HKEX Allotment -->
-                <div class="bg-white rounded-2xl shadow border overflow-hidden mb-8">
-                    <div class="px-6 py-4 border-b bg-slate-50">
-                        <div class="font-semibold text-lg">港股配發結果公告（共4家）</div>
-                    </div>
-                    <div class="p-4">
-                        <table class="ipo-table w-full text-sm">
-                            <thead>
-                                <tr>
-                                    <th>發放時間</th>
-                                    <th>股份代號</th>
-                                    <th>股份簡稱</th>
-                                    <th>文件</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>2026-05-21</td><td>06872</td><td>丹諾醫藥－B</td><td>分配結果公告 (1MB)</td></tr>
-                                <tr><td>2026-05-19</td><td>07688</td><td>拓璞數控</td><td>分配結果公告 (1MB)</td></tr>
-                                <tr><td>2026-05-19</td><td>01511</td><td>馭勢科技</td><td>配發結果公告 (1MB)</td></tr>
-                                <tr><td>2026-05-15</td><td>06871</td><td>翼菲科技</td><td>分配結果公告 (1MB)</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- HKEX New Listing Applications -->
-                <div class="bg-white rounded-2xl shadow border overflow-hidden">
-                    <div class="px-6 py-4 border-b bg-slate-50">
-                        <div class="font-semibold text-lg">港股新上市申請信息（共12家）</div>
-                    </div>
-                    <div class="p-4">
-                        <table class="ipo-table w-full text-sm">
-                            <thead>
-                                <tr>
-                                    <th>日期</th>
-                                    <th>申請人</th>
-                                    <th>協調人公告</th>
-                                    <th>申請版本</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>2026-05-21</td><td>南京硅基智能科技集團股份有限公司</td><td>整體協調人公告－委任</td><td>申請版本（第一次呈交）</td></tr>
-                                <tr><td>2026-05-21</td><td>蕪湖伯特利汽車安全系統股份有限公司</td><td>整體協調人公告－委任</td><td>申請版本（第一次呈交）</td></tr>
-                                <tr><td>2026-05-20</td><td>上海科梁信息科技股份有限公司</td><td>整體協調人公告－委任</td><td>申請版本（第一次呈交）</td></tr>
-                                <tr><td>2026-05-20</td><td>上海觀安信息技術股份有限公司</td><td>整體協調人公告－委任</td><td>申請版本（第一次呈交）</td></tr>
-                                <tr><td>2026-05-20</td><td>中旅港澳文旅控股有限公司</td><td>-</td><td>申請版本（第一次呈交）</td></tr>
-                                <tr><td>2026-05-20</td><td>科興生物製藥股份有限公司</td><td>整體協調人公告－委任（經修訂）</td><td>申請版本（第一次呈交）</td></tr>
-                                <tr><td>2026-05-20</td><td>廣東領益智造股份有限公司</td><td>整體協調人公告－委任</td><td>申請版本（第一次呈交）</td></tr>
-                                <tr><td>2026-05-20</td><td>踏歌智行科技股份有限公司</td><td>整體協調人公告－委任</td><td>申請版本（第一次呈交）</td></tr>
-                                <tr><td>2026-05-20</td><td>臨工重機股份有限公司</td><td>整體協調人公告－委任</td><td>申請版本（第一次呈交）</td></tr>
-                                <tr><td>2026-05-19</td><td>Xiaoe Inc.</td><td>整體協調人公告－委任</td><td>申請版本（第一次呈交）</td></tr>
-                                <tr><td>2026-05-19</td><td>江西生物製品研究所股份有限公司</td><td>整體協調人公告－委任</td><td>申請版本（第一次呈交）</td></tr>
-                                <tr><td>2026-05-19</td><td>廈門科拓通訊技術股份有限公司</td><td>整體協調人公告－委任（經修訂）</td><td>申請版本（第一次呈交）</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="mt-4 text-sm text-slate-600">
-                    <strong>统计摘要：</strong><br>
-                    上海证券交易所：共 25 家（科创板 19 家，主板 6 家）。主要状态：已问询 15 家、已受理 6 家。<br>
-                    港股配發結果公告：共 4 家。<br>
-                    港股新上市申請信息：共 12 家。
-                </div>
+            <!-- 页脚 -->
+            <div class="text-center text-xs text-slate-400 pt-6 border-t">
+                报告生成时间：2026-05-31 · 严格复刻参考设计系统 · 所有内容完整保留 · 仅供参考
             </div>
 
         </div>
